@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import home from '../components/home.vue'
+import home from '../components/task/home.vue'
 import header from '../components/header.vue'
-import Signup from '../components/Signup.vue'
-import Dashboard from '../components/Dashboard.vue'
-import addStorie from '../components/addStorie.vue'
-import Storie from '../components/Storie.vue'
+import Signup from '../components/auth/Signup.vue'
+import Dashboard from '../components/task/Dashboard.vue'
+import addStorie from '../components/task/addStorie.vue'
+import Storie from '../components/task/Storie.vue'
+import Profile from '../components/auth/Profile.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +26,11 @@ const router = createRouter({
       component: Signup
     },
     {
+      path: '/Profile',
+      name: 'Profile',
+      component: Profile
+    },
+    {
       path: '/Dashboard',
       name: 'Dashboard',
       component: Dashboard,
@@ -38,7 +44,8 @@ const router = createRouter({
             path: 'Storie',
             name: 'storie',
             component: Storie,
-          }
+          },
+         
       ]
     }
   ]

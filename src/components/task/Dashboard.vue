@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="menu-aside-footer">
-                    <router-link to="/Dashboard/Storie" class="button">
+                    <router-link to="/Profile" class="button">
                         <div class="profile-pic"><img src="../assets/hero.png" alt=""></div>
                     </router-link>
                     <p>{{ username }}</p>
@@ -65,7 +65,7 @@
                     </div>
                     <div>
                         <!-- v-for="story of stories" :key=story?.id" -->
-                        <RouterView />
+                        <router-view />
                     </div>
                 </div>
                 <div class="col-2"></div>
@@ -76,7 +76,9 @@
 
 
 <script>
+// import Storie from './Storie.vue'
 export default {
+//   components: { Storie },
     data() {
         return {
             myStyle: {

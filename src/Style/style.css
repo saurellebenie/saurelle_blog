@@ -66,8 +66,8 @@ body {
 
 /* image qui bouge */
 .pumpkin img {
-   height: 100px;
-   width: 100px;
+   height: 80px;
+   width: 80px;
    position: absolute;
    left: 70%;
    bottom: 30%;
@@ -129,13 +129,15 @@ body {
    width: 50px;
 }
 .search{
-   border: 1px solid var(--heat-color);
    padding: 3px 8px;
    border-radius: 10px;
 }
-.search input{
+.search input,
+::placeholder{
    border: none;
    color: var(--color-primary);
+   outline: none;
+   font-family: var(--font-rigtheous);
 }
 .navbar .logo {
    font-size: 2rem;

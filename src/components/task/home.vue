@@ -11,9 +11,9 @@
         <label for="checkbox_toggle" class="hamburger">&#9776;</label>
         <!-- NAVIGATION MENUS -->
         <div class="menu">
-          <li><a href="/">Storie</a></li>
-          <li><a class="signup" href="/">Post</a></li>
-          <li class="profile-pic"><a href="/"><img src="../assets/hero.png" alt=""></a></li>
+          <li><a href="/Signup">Storie</a></li>
+          <li><a class="signup" href="/Signup">Post</a></li>
+          
           <li><a href="">Writte</a></li>
           <li><a href="/Signup">Sign up</a></li>
           <li><button class="header-btn"><a href="#">Get started</a></button></li>

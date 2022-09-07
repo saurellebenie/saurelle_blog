@@ -10,3 +10,19 @@ const app = createApp(App)
 app.use(router).use(style)
 
 app.mount('#app')
+
+new Vue({
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App },
+    methods:{
+        checkLogin(){
+            if(!localStorage.getItem('login')){
+                this.$router.push('/login');
+            }else{
+                this.$router.push('/user');
+            }
+        }
+    }
+  })

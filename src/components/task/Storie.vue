@@ -22,7 +22,10 @@
 export default {
     setup() {
         return{
-            
+            post:{
+                title:'',
+                description: '',
+            }
         }
     },
 }
