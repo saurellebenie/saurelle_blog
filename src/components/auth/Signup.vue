@@ -1,62 +1,54 @@
 <template>
 
-    <div class="signup">
-        <!-- LOGO -->
-        <div class="logo"> Swdb <img src="../assets/logo.png" alt=""></div>
-        <form>
-            <label>username :</label>
-            <input type="username" v-model="username" required>
+    <div class="container" id="container">
 
-            <label>Email :</label>
-            <input type="email" v-model="email" required>
-
-            <label>Password :</label>
-            <input type="password" v-model="password" required>
-            <div v-if="passwordError" class="error">{{ passwordError }} </div>
-
-            <label>Role :</label>
-            <select v-model="role">
-                <option value="designer">Frontend Developer</option>
-                <option value="developer">Backend Developer</option>
-            </select>
-
-            <div>
-                <input type="checkbox" v-model="terms" required >
-                <label>Please accept terms and conditions</label>
-            </div>
-            <div class="btton">
-                <button @click="handleSubmit()" class="submit" type="submit">Sign up here</button>
-            </div>
-        </form>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <!-- LOGO -->
+                <div class="logo"> Swdb <img src="../../assets/logo.png" alt=""></div>
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" v-model="username" placeholder="Name" required />
+                <input type="email" v-model="email" placeholder="Email" required />
+                <input type="password" v-model="password" placeholder="Password" required />
+                <button @click="handleSubmit()">Sign In</button>
+            </form>
+        </div>
 
     </div>
+
 
 </template>
 
 <script>
 import axios from 'axios';
 export default {
+    setup() {
+
+    },
+
 
     data() {
         return {
             username: '',
             email: '',
             password: '',
-            role: 'fulstack',
-            terms: false,
-            passwordError: ''
+
         }
     },
     methods: {
-
         handleSubmit() {
             let username = this.username;
             let email = this.email;
             let password = this.password;
-            let role = this.role;
-            let terms = this.terms;
 
-            console.log(email, password, role, terms);
+
+            console.log(username, email, password);
             localStorage.setItem('username', this.username)
             //Validate password field length
             this.passwordError = this.password.length > 6 ?
@@ -72,126 +64,164 @@ export default {
             // };
             // const response = axios.post(serverEndpoint, payload);
             // localStorage.setItem("user", JSON.stringify(response.data.data))
-            
+
             // console.log(response);
-            this.$router.push('/Dashboard')
-              //   import axios from "axios";
-    // export default {
-    //   name: "Signup",
-    //   computed: {},
-    //   methods: {
-    //     async signIn() {
-    //       let username = this.username;
-    //       let email = this.email;
-    //       let password = this.password;
-    //       let firstName = this.firstName;
-    //       let lastName = this.lastName;
-    //       console.log(username, email, password, firstName, lastName);
+            this.$router.push('/Login')
+            //   import axios from "axios";
+            // export default {
+            //   name: "Signup",
+            //   computed: {},
+            //   methods: {
+            //     async signIn() {
+            //       let username = this.username;
+            //       let email = this.email;
+            //       let password = this.password;
+            //       let firstName = this.firstName;
+            //       let lastName = this.lastName;
+            //       console.log(username, email, password, firstName, lastName);
 
-    //     const serverEndpoint = "https://kingscorp.xyz/api/v1/app/appRegister";
-    //     const payload = {
-    //       username:username,
-    //       email:email,
-    //       password:password,
-    //       firstName:firstName,
-    //       lastName:lastName
-    //     };
-    //     const response =  await axios.post(serverEndpoint,payload);
-    //     localStorage.setItem("user", JSON.stringify(response.data.data))
+            //     const serverEndpoint = "https://kingscorp.xyz/api/v1/app/appRegister";
+            //     const payload = {
+            //       username:username,
+            //       email:email,
+            //       password:password,
+            //       firstName:firstName,
+            //       lastName:lastName
+            //     };
+            //     const response =  await axios.post(serverEndpoint,payload);
+            //     localStorage.setItem("user", JSON.stringify(response.data.data))
 
-    //     this.$router.push('/home')
+            //     this.$router.push('/home')
 
-    //     }
-    //   },
-    //   data() {
-    //     return {
-    //       username: "",
-    //       email: "",
-    //       password: "",
-    //       firstName: "",
-    //       lastName: "",
-    //     };
-    //   },
-    // };
+            //     }
+            //   },
+            //   data() {
+            //     return {
+            //       username: "",
+            //       email: "",
+            //       password: "",
+            //       firstName: "",
+            //       lastName: "",
+            //     };
+            //   },
+            // };
         }
     }
-
 }
+
+
 </script>
+
 <style scoped>
-.signup .logo {
-    align-items: center;
-    width: 10%;
-    margin: 0 auto;
-    font-size: 2rem;
-    font-weight: var(--font-bold-400);
-    color: hsl(218, 23%, 23%);
-    display: flex;
-    margin-top: 2rem;
+    p,h1{
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+
+
+span {
+    font-size: 12px;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin: 1rem;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
 }
 
 form {
-    max-width: 600px;
-    margin: 30px auto;
-    background: #fff;
-    text-align: left;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-label {
-    color: #aaa;
-    display: inline-block;
-    margin: 25px 0 15px;
-    text-transform: uppercase;
-}
-
-input,
-select {
-    display: block;
-    padding: 10px 6px;
-    width: 100%;
-    box-sizing: bordre-box;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    color: #555;
-}
-
-input[type="checkbox"] {
-    display: inline-block;
-    width: 16px;
-    margin: 0 10px 0;
-    position: relative;
-    top: 2px;
-}
-
-.pill {
-    display: inline-block;
-    margin: 20px 10px 0 0;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    cursor: pointer;
-    background: #eee;
-}
-
-.submit {
-    background: rgb(7, 24, 7);
-    border: 0;
-    padding: 10px 20px;
-    color: white;
-    border-radius: 20px;
-}
-
-.submit {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
     text-align: center;
+    margin-top: 2rem;
 }
 
-.error {
-    color: #ff0000;
-    margin-top: 10px;
-    font-size: 0.8em;
-    font-weight: bold;
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    outline: none;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 90%;
+    transition: all 0.6s ease-in-out;
+    margin: 0 auto;
+}
+.form-container .logo{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+}
+.form-container .logo img{
+    widows: 50px;
+}
+.sign-in-container {
+    left: 0;
+    width: 100%;
+
+}
+
+
+@media (max-width: 768px) {
+    .container{
+        width: 100%;
+    }
+    form{
+        background-color: none;
+        box-shadow: none;
+    }
 }
 </style>
-   

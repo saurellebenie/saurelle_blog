@@ -1,6 +1,6 @@
 :root {
-   --button-bg: #3265ff;
-   --button-bg-hover: hsl(216, 15%, 52%);
+   --button-bg: teal;
+   --button-bg-hover: orange;
    --font-rigtheous: 'Righteous', cursive;
    --font-bold-400: 400;
    --page-color: hsl(229, 76%, 66%);
@@ -12,6 +12,27 @@
    --heat-color: hsl(218, 23%, 23%);
    --animate-duration: 2s;
    --right-box: 2px 2px 5px 2px #e6e4e4;
+}
+.animate__flipInX,
+.animate__flipInY{
+   --animate-duration: 2s;
+}
+.social-container {
+   margin: 0 auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.social-container a {
+   border: 1px solid #DDDDDD;
+   border-radius: 50%;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 5px;
+   height: 40px;
+   width: 40px;
+   color: black;
 }
 
 * {
@@ -127,6 +148,8 @@ body {
 /* LOGO */
 .logo img {
    width: 50px;
+   vertical-align: middle;
+   
 }
 .search{
    padding: 3px 8px;
@@ -139,7 +162,7 @@ body {
    outline: none;
    font-family: var(--font-rigtheous);
 }
-.navbar .logo {
+.logo {
    font-size: 2rem;
    font-weight: var(--font-bold-400);
    line-height: 1.1;
@@ -256,8 +279,8 @@ h1 {
    display: var(--display-flex);
    height: 100px;
    /* justify-content: var(--justify-content); */
-   padding-right: 10px;
    width: 320px;
+   margin-bottom: 20px;
 }
 
 .container-Featured .blog {
@@ -271,6 +294,13 @@ h1 {
    font-size: 1rem;
    font-weight: var(--font-bold-400);
    margin-right: 20px;
+   background-color: #a3a2a2;
+   height: 30px;
+   width: 30px;
+   padding: 5px;
+   display: flex;
+   align-items: center;
+   border-radius: 50%;
 }
 
 .profile-pic {
@@ -294,7 +324,7 @@ span {
    color: var(--heat-color);
 }
 .date{
-   margin-top: 20px;
+   margin-top: 5px;
 }
 /* container */
 .story {
@@ -325,6 +355,7 @@ span {
    margin-bottom: 2rem;
    background-color: #fff;
    border-radius: 10px;
+   padding: 20px;
 }
 
 .left .card .title a {
@@ -414,7 +445,7 @@ span {
    margin-top: 4rem;
 }
 
-.right .wrapper .hashtag {
+.hashtag {
    padding: 10px;
    margin: 5px;
    background-color: var(--button-bg-hover);
@@ -426,7 +457,7 @@ span {
    color: #fff;
 }
 
-.right .wrapper button:hover {
+.wrapper button:hover {
    background-color: var(--button-bg);
 }
 
@@ -437,7 +468,7 @@ span {
    background: rgba(255, 255, 255, .97);
 }
 
-.right .wrap span a,
+.right  span a,
 .copyright,
 .copyright a {
    color: var(--color-primary);

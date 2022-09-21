@@ -2,25 +2,37 @@
     <!--  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 -->
     <form action="">
         <div class="add-story">
-            <label for="">Write a subtitle</label>
+            <label for="">Write a title</label>
             <input type="text" name="" id="" v-model="post.title" placeholder="Title">
+            
             <label>Add content (up to 5) so readers know what your story is about</label>
-            <input type="text" name="" id="" v-model="post.description">
-            
-            <editor :init="{
-                plugins: 'lists link image table code help wordcount'
-            
+            <input type="text" name="" id="" v-model="post.description" placeholder="description">
+            <label>write content here</label>
+            <editor api-key="9tfwhrotb6bnkqepmnm8p3knll8vt2d0tychhq7atetnbao2" :init="{
+                selector: 'textarea',
+              height: 500,
+              menubar: false,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+              ],
+              toolbar:
+                'undo redo | formatselect | bold italic backcolor | \
+                alignleft aligncenter alignright alignjustify | \
+                bullist numlist outdent indent | removeformat | help'
             }" />
-           
-            <span><input type="file"></span>
         </div>
+
+        <span><input type="file"></span>
+
         <button class="submit-button" @click="savePost" type="button">Publish</button>
     </form>
-<!-- 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 -->
+    <!-- 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 -->
 
 </template>
 <script>
-    import Editor from '@tinymce/tinymce-vue';
+import Editor from '@tinymce/tinymce-vue';
 export default {
     setup() {
 
@@ -30,18 +42,20 @@ export default {
             post: {
                 id: '',
                 title: '',
+                description: '',
                 files: [],
+                editor: '',
 
             },
 
         }
     },
     components: {
-    'editor': Editor
-  },
+        'editor': Editor
+    },
     methods: {
-       
-        
+
+
         savePost() {
             console.log(this.post);
 
@@ -51,27 +65,32 @@ export default {
     }
 }
 </script>
-<style>
-    form{
-        margin-bottom: 5rem;
-        position: relative;
-    }
+<style scoped>
+form {
+    margin-bottom: 5rem;
+    position: relative;
+}
+
 form .add-story {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 80%;
 }
 
 form .add-story input,
-textarea {
-    margin-bottom: 1rem;
+form .add-story span{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: groove;
     padding: 10px;
-    outline: none;
     align-items: center;
+}
+
+textarea,input{
+    margin-bottom: 2rem;
+    outline: none;
 }
 
 input[type=text] {
@@ -91,6 +110,7 @@ input[type=text] {
     border: none;
     border-radius: 20px;
     color: #fff;
+    margin-top: 1rem;
 }
 
 .submit-button:hover {
