@@ -15,7 +15,7 @@
           <li><a class="signup" href="/Signup">Post</a></li>
           
           <li><a href="">Writte</a></li>
-          <li><a href="/Signup">Sign up</a></li>
+          <li><a href="/Login">Sign up</a></li>
           <li><button class="header-btn"><a href="#">Get started</a></button></li>
         </div>
       </ul>

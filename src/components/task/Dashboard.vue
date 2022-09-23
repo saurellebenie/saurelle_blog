@@ -2,9 +2,6 @@
     <div id="container">
         <!-- mobile nav -->
         <nav class="mobile-nav">
-            <router-link to="/">
-                <div class="logo"><img src="../../assets/logo.png" alt=""></div>
-            </router-link>
             <div class="search"><span class="material-symbols-outlined">search</span><input type="text" name="" id=""
                     placeholder="search"></div>
             <router-link to="/Dashboard/Storie">
@@ -24,26 +21,30 @@
                 </router-link>
                 <!-- sidebar -->
                 <div class="menu-aside">
-                    <router-link @click=sliderIndicator() :class="active" to="/Dashboard" class="button">
+                    <router-link :class=' { "selected": selected === 0 } ' @click='changeSelected(0)' to="/Dashboard"
+                        class="button">
                         <span class="material-symbols-outlined">
                             other_houses
                         </span>
                         <p>Dashboard</p>
                     </router-link>
-                    <router-link @click=sliderIndicator() :class="active" to="/Dashboard/Notification" class="button">
+                    <router-link :class=' { "selected": selected === 1 } ' @click='changeSelected(1)'
+                        to="/Dashboard/Notification" class="button">
                         <span class="material-symbols-outlined">
                             notifications
                         </span>
                         <p> Notification</p>
                     </router-link>
-                    <router-link @click=sliderIndicator() :class="active" to="/Dashboard/addStorie" class="button">
+                    <router-link :class=' { "selected": selected === 2 } ' @click='changeSelected(2)'
+                        to="/Dashboard/addStorie" class="button">
                         <span class="material-symbols-outlined">
                             edit_square
                         </span>
                         <p>Whrite</p>
                     </router-link>
 
-                    <router-link @click=sliderIndicator() :class="active" to="/Dashboard/addStorie" class="button">
+                    <router-link :class=' { "selected": selected === 3 } ' @click='changeSelected(3)'
+                        to="/Dashboard/addStorie" class="button">
                         <span class="material-symbols-outlined">
                             article
                         </span>
@@ -54,7 +55,7 @@
 
 
                 <div class="menu-aside-footer">
-                    <router-link @click=sliderIndicator() :class="active" to="/Dashboard/addStorie" class="button">
+                    <router-link to="/Dashboard/addStorie" class="button">
                         <span class="material-symbols-outlined">
                             logout
                         </span>
@@ -75,32 +76,36 @@
 
                         <div class="head-left">
                             <button class="w3-xlarge" @click="w3_open()">&#x39E;</button>
-                            <p>Hi {{username}},</p>
-                            <h3>Welcom </h3>
+                            <div>
+                                <p>Hi {{username}},</p>
+                                <p>Welcom </p>
+                            </div>
                         </div>
                         <div class="head-right">
                             <!-- langage option -->
-                            <div class="lang-menu">
-                                <div class="selected-lang">
-                                    English
+                            <div class="div-1">
+                                <div class="lang-menu">
+                                    <div class="selected-lang">
+                                        English
+                                    </div>
+                                    <ul>
+
+                                        <li>
+                                            <a href="" class="en">English</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="fr">French</a>
+                                        </li>
+
+                                    </ul>
+
                                 </div>
-                                <ul>
-
-                                    <li>
-                                        <a href="" class="en">English</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="fr">French</a>
-                                    </li>
-
-                                </ul>
-
-                            </div>
-                            <!-- end -->
-                            <div>
-                                <router-link to="/Dashboard/Profile">
-                                    <div class="profile-pic"><img src="../../assets/hero.png" alt=""></div>
-                                </router-link>
+                                <!-- end -->
+                                <div>
+                                    <router-link to="/Dashboard/Profile">
+                                        <div class="profile-pic"><img src="../../assets/hero.png" alt=""></div>
+                                    </router-link>
+                                </div>
                             </div>
                         </div>
 
@@ -135,21 +140,21 @@
                             <div class="detail">
                                 <div>
                                     <img src="../../assets/hero.png" alt="">
-                                    <p>name <br>A senior webdevelopper </p>
+                                    <p> <strong>Name</strong> <br> some infos </p>
                                 </div>
                                 <button class="hashtag"> <a href="#">follow</a> </button>
                             </div>
                             <div class="detail">
                                 <div>
                                     <img src="../../assets/hero.png" alt="">
-                                    <p>name <br>A senior webdevelopper </p>
+                                    <p> <strong>Name</strong> <br> some infos </p>
                                 </div>
                                 <button class="hashtag"> <a href="#">follow</a> </button>
                             </div>
                             <div class="detail">
                                 <div>
                                     <img src="../../assets/hero.png" alt="">
-                                    <p>name <br>A senior webdevelopper </p>
+                                    <p> <strong>Name</strong> <br> some infos </p>
                                 </div>
                                 <button class="hashtag"> <a href="#">follow</a> </button>
                             </div>
@@ -173,8 +178,16 @@
 
 <script>
 // import Storie from './Storie.vue'
+import { ref } from 'vue';
 export default {
     //   components: { Storie },
+    setup() {
+        const selected = ref(0) // index of the selected el
+        const changeSelected = (i) => { selected.value = i; }
+        return {
+            selected,
+        }
+    },
     data() {
         return {
             myStyle: {
@@ -245,9 +258,8 @@ aside .sidebar {
     z-index: 900;
 }
 
-aside .menu-aside.active {
-    color: var(--active-color);
-    background-color: var(--active-background-color);
+aside .menu-aside.selected {
+    color: #4bcffa;
 }
 
 aside .menu-aside .button span,
@@ -257,17 +269,21 @@ aside .menu-aside-footer .button span {
 }
 
 .button {
-    background-color: rgb(238, 37, 37);
     width: 100%;
     display: flex;
     align-items: center;
     height: auto;
     color: #000;
     padding: 5px 0;
+    background: linear-gradient(to right, pink 0%, rgb(245, 60, 14) 47%, red 47%, red 50%, #FFFFFF 50%, #FFFFFF 50%);
+    background-size: 200%;
+    transition: .2s ease-out;
+    margin-top: 5px;
+    font-weight: bold;
 }
 
 aside .button:hover {
-    background-color: hsl(215, 20%, 81%);
+    background-position: right;
 }
 
 aside .menu-aside-footer .button {
@@ -308,23 +324,25 @@ section {
 }
 
 section .head {
-    height: 60px;
+    height: 80px;
     box-shadow: 0 2px 2px -2px rgba(7, 7, 7, 0.15);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    width: 56%;
     z-index: 900;
-    /* top: 0; */
+    top: 0;
     position: fixed;
     background-color: #fff;
 }
 
 section .head .head-left,
-section .head .head-right {
+section .head .head-right,
+section .head .head-right  .div-1{
     display: flex;
     align-items: center;
 }
+
 
 section .head .head-left button {
     /* margin-top: 10px; */
@@ -357,7 +375,7 @@ section .head .head-left button {
     display: inline-block;
     width: 32px;
     height: 32px;
-    background-image: url(https://www.countryflags.io/us/flat/32.png);
+    background-image: url(../../assets/royaume-uni.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -382,6 +400,7 @@ section .head .head-left button {
     text-align: left;
     display: flex;
     justify-content: space-between;
+    /* cursor: pointer; */
 }
 
 .lang-menu ul li a {
@@ -406,26 +425,15 @@ section .head .head-left button {
     background-repeat: no-repeat;
 }
 
-.de:before {
-    background-image: url(https://www.countryflags.io/de/flat/32.png);
-}
-
 .en:before {
-    background-image: url(https://www.countryflags.io/us/flat/32.png);
+    background-image: url(../../assets/royaume-uni.png);
 }
 
 .fr:before {
-    background-image: url(https://www.countryflags.io/fr/flat/32.png);
+    background-image: url(../../assets/hero.png);
 }
 
-
-
-
-.lang-menu:hover ul {
-    display: block;
-}
-
-section .head p {
+section .head-left p {
     color: tomato;
     font-weight: lighter;
 }
@@ -445,7 +453,8 @@ section .row .col-1 {
 }
 
 section .row .col-1 .all-content {
-    margin-top: 4rem;
+    margin-top: 5rem;
+    width: 100%;
 }
 
 section .row {
@@ -457,7 +466,7 @@ section .row {
 }
 
 section .row .col-2 {
-    width: 25%;
+    width: 30%;
     height: 100%;
     position: sticky;
     right: 0;
@@ -477,9 +486,10 @@ section .row .col-2 .wrap {
     box-shadow: var(--line-border);
     color: var(--heat-color);
     background-color: #fff;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding-top: 30px;
-    /* align-items: center; */
+    align-items: center;
+    width: 100%;
 }
 
 section .row .col-2 .wrap {
@@ -498,14 +508,20 @@ section .row .col-2 h4 {
 
 section .row .col-2 .follow .detail {
     margin-top: 1rem;
+    width: 100%;
 }
 
 section .row .col-2 .follow .detail,
 section .row .col-2 .follow .detail div {
     display: flex;
     justify-content: space-between;
-    height: 50px;
-    padding: 2px;
+    height: 40px;
+    /* padding: 2px; */
+    align-items: center;
+}
+
+section .row .col-2 .follow .detail div p {
+    font-size: 12px;
 }
 
 section .row .col-2 .follow .detail img {
@@ -525,14 +541,15 @@ section .row .col-2 .follow .detail .hashtag a {
 }
 
 /* media queries */
+@media screen and (max-width: 800px) {}
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     #container {
         /* display: flex; */
         align-items: center;
     }
 
-    
+
     aside .sidebar {
         /* position: relative; */
         width: 100%;
@@ -618,25 +635,31 @@ section .row .col-2 .follow .detail .hashtag a {
     }
 
 }
-@media screen and (max-width: 400px){
+
+@media screen and (max-width: 400px) {
     #container {
         display: block;
         align-items: center;
     }
+
     .mobile-nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
         height: 80px;
         box-shadow: var(--line-border);
-        position: sticky;
-        top: 0px;
+        position: fixed;
         align-items: center;
         background: #fff;
         background-attachment: fixed;
         padding: 20px;
         z-index: 999;
+        margin-top: 4rem;
+    }
 
+    aside {
+        width: 50%;
+        height: 100%;
     }
 
     .mobile-nav span {
@@ -646,8 +669,16 @@ section .row .col-2 .follow .detail .hashtag a {
     section .row .col-2 {
         display: none;
     }
+
     section .row .col-1 {
         width: 100%;
+    }
+
+    section .row .col-1 .head {
+        margin: 0 auto;
+        /*  */
+        width: 90%;
+
     }
 
 }

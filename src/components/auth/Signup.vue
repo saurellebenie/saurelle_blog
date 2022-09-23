@@ -66,7 +66,7 @@ export default {
             // localStorage.setItem("user", JSON.stringify(response.data.data))
 
             // console.log(response);
-            this.$router.push('/Login')
+            this.$router.push('/Dashboard')
             //   import axios from "axios";
             // export default {
             //   name: "Signup",

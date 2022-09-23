@@ -36,7 +36,7 @@
 
                     <!--        buttons -->
                     <!--      button LogIn -->
-                    <button class="log-in"> Log In </button>
+                    <button @click="HandleLogin()" class="log-in"> Log In </button>
                     <p>OR</p>
                 </div>
 
@@ -45,7 +45,7 @@
                     <!--      Forgot Password button-->
                     <button class="btn submits frgt-pass">Forgot Password</button>
                     <!--     Sign Up button -->
-                    <button class="btn submits sign-up" @click="HandleLogin()">Sign Up
+                    <button class="btn submits sign-up" @click="HandleSignup()">Sign Up
                         <!--         Sign Up font icon -->
                         <i class="fa fa-user-plus" aria-hidden="true"></i>
                     </button>
@@ -67,8 +67,11 @@ export default {
         
     },
     methods: {
+        HandleSignup(){
+            this.$router.push('/Signup')
+        },
         HandleLogin(){
-            this.$router.push('/Dashboard')
+            this.$router.push('Dashboard')
         }
     },
 }

@@ -1,6 +1,6 @@
 :root {
-   --button-bg: teal;
-   --button-bg-hover: orange;
+   --button-bg: rgba(0, 0, 0, .2);
+   --button-bg-hover: rgba(0, 0, 0, .2);
    --font-rigtheous: 'Righteous', cursive;
    --font-bold-400: 400;
    --page-color: hsl(229, 76%, 66%);
