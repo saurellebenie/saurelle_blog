@@ -4,7 +4,7 @@ import Signup from '../components/auth/Signup.vue'
 import Dashboard from '../components/task/Dashboard.vue'
 import addStorie from '../components/task/addStorie.vue'
 import Storie from '../components/task/Storie.vue'
-import Profile from '../components/auth/Profile.vue'
+import Profile from '../components/task/Profile.vue'
 import Login from '../components/auth/Login.vue'
 import Notification from '../components/task/Notification.vue'
 
@@ -27,6 +27,11 @@ const router = createRouter({
       component: Signup
     },
     {
+      path: '/Profile',
+      name: 'Profile',
+      component: Profile
+    },
+    {
       path: '/Dashboard',
       name: 'Dashboard',
       component: Dashboard,
@@ -41,11 +46,6 @@ const router = createRouter({
             path: '',
             name: 'storie',
             component: Storie,
-          },
-          {
-            path: 'Profile',
-            name: 'Profile',
-            component: Profile
           },
           {
             path: 'Notification',

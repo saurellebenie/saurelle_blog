@@ -156,11 +156,6 @@ button:focus {
     outline: none;
 }
 
-button.ghost {
-    background-color: transparent;
-    border-color: #FFFFFF;
-}
-
 form {
     background-color: #FFFFFF;
     display: flex;
@@ -188,9 +183,10 @@ input {
     position: relative;
     overflow: hidden;
     width: 500px;
-    height: 500px;
+    height: 100vh;
     margin: 0 auto;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
 }
 
 .form-container {

@@ -4,10 +4,20 @@
         <div class="add-story">
             <label for="">Write a title</label>
             <input type="text" name="" id="" v-model="post.title" placeholder="Title">
-            
+            <label>Topic</label>
+            <select name="" id="">
+                <option value="html">html</option>
+                <option value="css">css</option>
+                <option value="javascript">javascript</option>
+                <option value="Vue">vue js</option>
+                <option value="React">react</option>
+            </select>
             <label>Add content (up to 5) so readers know what your story is about</label>
             <input type="text" name="" id="" v-model="post.description" placeholder="description">
+
             <label>write content here</label>
+
+
             <editor api-key="9tfwhrotb6bnkqepmnm8p3knll8vt2d0tychhq7atetnbao2" :init="{
                 selector: 'textarea',
               height: 500,
@@ -75,11 +85,11 @@ form .add-story {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
 }
 
 form .add-story input,
-form .add-story span{
+form .add-story span {
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -87,8 +97,15 @@ form .add-story span{
     padding: 10px;
     align-items: center;
 }
+select{
+    width: 15%;
+    border: 1px solid rgb(167, 162, 162);
+    margin-top: 10px;
+}
 
-textarea,input{
+textarea,
+input,
+select {
     margin-bottom: 2rem;
     outline: none;
 }
@@ -106,7 +123,7 @@ input[type=text] {
     width: 200px;
     padding: 10px;
     font-family: var(--font-rigtheous);
-    background-color: teal;
+    background-color: black;
     border: none;
     border-radius: 20px;
     color: #fff;
@@ -115,7 +132,7 @@ input[type=text] {
 
 .submit-button:hover {
     background-color: #fff;
-    border: 2px solid teal;
+    border: 2px solid black;
     color: var(--heat-color);
     cursor: pointer;
     position: relative;

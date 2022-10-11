@@ -4,7 +4,7 @@
         <nav class="mobile-nav">
             <div class="search"><span class="material-symbols-outlined">search</span><input type="text" name="" id=""
                     placeholder="search"></div>
-            <router-link to="/Dashboard/Storie">
+            <router-link to="/Dashboard/Notification">
                 <span class="material-symbols-outlined">
                     notifications
                 </span>
@@ -12,55 +12,50 @@
         </nav>
         <!-- end mobile nav -->
         <!-- sidebar -->
-        <aside id="mySidebar">
+        <aside id="mySidebar" v-bind:class="[isActive ? 'block' : 'none']">
             <div class="sidebar">
-                <button @click="w3_close()" class="w3-bar-item w3-large"> &times;</button>
-                <!-- LOGO -->
-                <router-link to="/">
-                    <div class="logo"><img src="../../assets/logo.png" alt=""></div>
-                </router-link>
+                <div class="bar-close">
+                    <!-- LOGO -->
+                    <router-link to="/">
+                        <div class="logo"> GoBlog</div>
+                    </router-link>
+                    <!-- icone close -->
+                    <button @click="w3_close()" class="w3-bar-item"> &times;</button>
+                </div>
                 <!-- sidebar -->
                 <div class="menu-aside">
-                    <router-link :class=' { "selected": selected === 0 } ' @click='changeSelected(0)' to="/Dashboard"
-                        class="button">
+                    <router-link to="/Dashboard" class="button" @click="w3_close()">
                         <span class="material-symbols-outlined">
                             other_houses
                         </span>
                         <p>Dashboard</p>
                     </router-link>
-                    <router-link :class=' { "selected": selected === 1 } ' @click='changeSelected(1)'
-                        to="/Dashboard/Notification" class="button">
+                    <router-link to="/Dashboard/Notification" class="button">
                         <span class="material-symbols-outlined">
                             notifications
                         </span>
-                        <p> Notification</p>
+                        <p> Category</p>
                     </router-link>
-                    <router-link :class=' { "selected": selected === 2 } ' @click='changeSelected(2)'
-                        to="/Dashboard/addStorie" class="button">
+                    <router-link to="/Dashboard/addStorie" class="button">
                         <span class="material-symbols-outlined">
                             edit_square
                         </span>
-                        <p>Whrite</p>
+                        <p>Posts</p>
                     </router-link>
 
-                    <router-link :class=' { "selected": selected === 3 } ' @click='changeSelected(3)'
-                        to="/Dashboard/addStorie" class="button">
+                    <router-link to="/Dashboard/addStorie" class="button">
                         <span class="material-symbols-outlined">
                             article
                         </span>
-                        <p>Storie</p>
+                        <p>Tags</p>
                     </router-link>
-
-                </div>
-
-
-                <div class="menu-aside-footer">
                     <router-link to="/Dashboard/addStorie" class="button">
                         <span class="material-symbols-outlined">
                             logout
                         </span>
-                        <p>logout</p>
+                        <p>Users</p>
                     </router-link>
+
                 </div>
 
 
@@ -69,44 +64,20 @@
         <!-- end side bar -->
         <!-- content page -->
         <section>
-
             <div class="row">
                 <div class="col-1">
                     <div class="head">
 
                         <div class="head-left">
-                            <button class="w3-xlarge" @click="w3_open()">&#x39E;</button>
-                            <div>
-                                <p>Hi {{username}},</p>
-                                <p>Welcom </p>
-                            </div>
+                            <button class="w3-xlarge" @click="w3_open()"><span class="material-symbols-outlined">
+                                    menu
+                                </span></button>
                         </div>
-                        <div class="head-right">
-                            <!-- langage option -->
-                            <div class="div-1">
-                                <div class="lang-menu">
-                                    <div class="selected-lang">
-                                        English
-                                    </div>
-                                    <ul>
-
-                                        <li>
-                                            <a href="" class="en">English</a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="fr">French</a>
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-                                <!-- end -->
-                                <div>
-                                    <router-link to="/Dashboard/Profile">
-                                        <div class="profile-pic"><img src="../../assets/hero.png" alt=""></div>
-                                    </router-link>
-                                </div>
+                        <div class="head-right flex">
+                            <div class="notif">
+                                <div class="notification"></div>
                             </div>
+                            <profile />
                         </div>
 
                     </div>
@@ -114,60 +85,6 @@
                     <div class="all-content">
                         <!-- v-for="story of stories" @click=sliderIndicator() :key=story?.id" -->
                         <router-view />
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="content">
-                        <div class="search"><span class="material-symbols-outlined">search</span><input type="text"
-                                name="" id="" placeholder="search">
-                        </div>
-
-                        <h4>Recommended topics</h4>
-                        <div class="wrapper">
-
-                            <button class="hashtag"> <a href="#">mongodb</a> </button>
-                            <button class="hashtag"> <a href="#">nodejs</a></button>
-                            <button class="hashtag"> <a href="#">vuejs</a></button>
-                            <button class="hashtag"> <a href="#">mobility</a></button>
-                            <button class="hashtag"> <a href="#">javascript</a></button>
-                            <button class="hashtag"> <a href="#">mysql</a></button>
-                            <button class="hashtag"> <a href="#">htlm</a></button>
-                            <button class="hashtag"> <a href="#">css</a></button>
-
-                        </div>
-                        <h4>Who to follow</h4>
-                        <div class="follow">
-                            <div class="detail">
-                                <div>
-                                    <img src="../../assets/hero.png" alt="">
-                                    <p> <strong>Name</strong> <br> some infos </p>
-                                </div>
-                                <button class="hashtag"> <a href="#">follow</a> </button>
-                            </div>
-                            <div class="detail">
-                                <div>
-                                    <img src="../../assets/hero.png" alt="">
-                                    <p> <strong>Name</strong> <br> some infos </p>
-                                </div>
-                                <button class="hashtag"> <a href="#">follow</a> </button>
-                            </div>
-                            <div class="detail">
-                                <div>
-                                    <img src="../../assets/hero.png" alt="">
-                                    <p> <strong>Name</strong> <br> some infos </p>
-                                </div>
-                                <button class="hashtag"> <a href="#">follow</a> </button>
-                            </div>
-                        </div>
-                        <!-- footer in right  -->
-                        <div class="wrap">
-                            <span> <a href="#">Help</a></span>
-                            <span> <a href="#">Status</a></span>
-                            <span> <a href="#">About</a></span>
-                            <span> <a href="#">Blog</a></span>
-                            <span> <a href="#">Carreers</a></span>
-                            <span> <a href="#">Privacy</a></span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -179,47 +96,46 @@
 <script>
 // import Storie from './Storie.vue'
 import { ref } from 'vue';
+import Profile from './Profile.vue';
 export default {
     //   components: { Storie },
     setup() {
-        const selected = ref(0) // index of the selected el
-        const changeSelected = (i) => { selected.value = i; }
+        const selected = ref(0); // index of the selected el
+        const changeSelected = (i) => { selected.value = i; };
         return {
             selected,
-        }
+        };
     },
     data() {
         return {
             myStyle: {
                 backgroundColor: "#fff"
             },
-            date: Date.now(),
+            date: new Date().toLocaleString(),
             username: "",
-            active: "",
-        }
+            isActive: true,
+        };
     },
     methods: {
         //     const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
-
         //     const ToggleMenu = () => {
         //         is_expanded.value = !is_expanded.value
         //         localStorage.setItem("is_expanded", is_expanded.value)
         //     }
         // this.username = localStorage.getItem("username", username);
         sliderIndicator() {
-
         },
         w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
+            this.isActive = true;
         },
         w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
+            this.isActive = !this.isActive;
         }
-
     },
     mounted() {
         this.username = localStorage.getItem("username");
     },
+    components: { Profile }
 }
 </script>
 
@@ -250,12 +166,17 @@ aside .menu-aside {
     /* align-items: center; */
 }
 
+aside .w3-bar-item {
+    display: none;
+}
+
 aside .sidebar {
     min-height: 100vh;
     position: fixed;
     width: 15%;
     box-shadow: 0 0px 15px 0px rgb(0 0 0 / 15%);
     z-index: 900;
+    background: #FF6A64;
 }
 
 aside .menu-aside.selected {
@@ -264,7 +185,7 @@ aside .menu-aside.selected {
 
 aside .menu-aside .button span,
 aside .menu-aside-footer .button span {
-    color: #000;
+    color: #fff;
     margin: 10px;
 }
 
@@ -273,17 +194,20 @@ aside .menu-aside-footer .button span {
     display: flex;
     align-items: center;
     height: auto;
-    color: #000;
+    color: #fff;
     padding: 5px 0;
-    background: linear-gradient(to right, pink 0%, rgb(245, 60, 14) 47%, red 47%, red 50%, #FFFFFF 50%, #FFFFFF 50%);
-    background-size: 200%;
-    transition: .2s ease-out;
+    /* background: none; */
     margin-top: 5px;
     font-weight: bold;
 }
 
 aside .button:hover {
-    background-position: right;
+    /* background-position: right; */
+    background: linear-gradient(to right, pink 0%, rgb(245, 60, 14) 47%, red 47%, red 50%, #FFFFFF 50%, #FFFFFF 100%);
+    background-size: 200%;
+    background-position: left;
+    transition: 5s ease-out;
+    width: 100%;
 }
 
 aside .menu-aside-footer .button {
@@ -297,248 +221,135 @@ aside .logo {
     margin: 0 auto;
     justify-content: center;
     padding-top: 1.5rem;
+    color: #fff;
 }
 
-aside .w3-bar-item {
-    float: right;
-    margin-top: 10px;
-    padding: 5px;
-    background: none;
-    border: none;
-    font-size: 3rem;
-    display: none;
-    cursor: pointer;
-}
-
-
-/* section */
 section {
     width: 85%;
 }
 
-.search {
-    display: flex;
-    align-items: center;
-    border: 1px solid rgba(230, 230, 230, 1);
-    margin: 0 auto;
-}
-
-section .head {
-    height: 80px;
-    box-shadow: 0 2px 2px -2px rgba(7, 7, 7, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 56%;
-    z-index: 900;
-    top: 0;
-    position: fixed;
-    background-color: #fff;
-}
-
-section .head .head-left,
-section .head .head-right,
-section .head .head-right  .div-1{
-    display: flex;
-    align-items: center;
-}
-
-
-section .head .head-left button {
-    /* margin-top: 10px; */
-    /* padding: 5px; */
-    background: none;
-    border: none;
-    font-size: 2rem;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-/* switch language */
-.lang-menu {
-    width: 100px;
-    text-align: right;
-    font-weight: bold;
-    margin-top: 25px;
-    position: relative;
-}
-
-.lang-menu .selected-lang {
-    display: flex;
-    justify-content: space-between;
-    line-height: 2;
-    cursor: pointer;
-}
-
-.lang-menu .selected-lang:before {
-    content: '';
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background-image: url(../../assets/royaume-uni.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.lang-menu ul {
-    margin: 0;
-    padding: 0;
-    display: none;
-    background-color: #fff;
-    border: 1px solid #f8f8f8;
-    position: absolute;
-    top: 45px;
-    right: 0px;
-    width: 125px;
-    border-radius: 5px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-.lang-menu ul li {
-    list-style: none;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    /* cursor: pointer; */
-}
-
-.lang-menu ul li a {
-    text-decoration: none;
-    width: 125px;
-    padding: 5px 10px;
-    display: block;
-}
-
-.lang-menu ul li:hover {
-    background-color: #f2f2f2;
-}
-
-.lang-menu ul li a:before {
-    content: '';
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-    margin-right: 10px;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.en:before {
-    background-image: url(../../assets/royaume-uni.png);
-}
-
-.fr:before {
-    background-image: url(../../assets/hero.png);
-}
-
-section .head-left p {
-    color: tomato;
-    font-weight: lighter;
-}
-
-section .head span {
-    color: hsl(218, 23%, 23%);
-}
-
-section .head span:hover {
-    color: rgba(102, 101, 101, 0.15);
-}
-
-
+/* section */
 section .row .col-1 {
-    width: 70%;
+    width: 100%;
+}
 
+section .row .head {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+section .row .head .head-rigth {
+    justify-content: space-between;
+}
+.head-left button span {
+    color:#b4b2b2;
+}
+/* Notifications */
+.notif {
+    margin-right: 20px;
+}
+
+.notification {
+    display: inline-block;
+    position: relative;
+    padding: 0.2em;
+    /* background: #FF6A64; */
+    border-radius: 0.2em;
+    font-size: 1.3em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification::before,
+.notification::after {
+    color: #b4b2b2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.notification::before {
+    display: block;
+    content: "\f0f3";
+    font-family: "FontAwesome";
+    transform-origin: top center;
+}
+
+.notification::after {
+    font-family: Arial;
+    font-size: 0.7em;
+    font-weight: 700;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    padding: 5px 8px;
+    line-height: 100%;
+    border: 2px #fff solid;
+    border-radius: 60px;
+    background: #FF6A64;
+    opacity: 0;
+    content: attr(data-count);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.notification.notify::before {
+    animation: ring 1.5s ease;
+}
+
+.notification.show-count::after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(35deg);
+    }
+
+    12.5% {
+        transform: rotate(-30deg);
+    }
+
+    25% {
+        transform: rotate(25deg);
+    }
+
+    37.5% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    62.5% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 section .row .col-1 .all-content {
-    margin-top: 5rem;
-    width: 100%;
+    margin-top: 2rem;
+    width: 90%;
+    margin: 0 auto;
 }
 
 section .row {
     display: flex;
     height: 100vh;
-    justify-content: space-between;
-    margin: auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
-section .row .col-2 {
-    width: 30%;
-    height: 100%;
-    position: sticky;
-    right: 0;
-    padding: 2px;
-    margin-top: 2rem;
-}
-
-section .row .col-2 .content {
-    width: 90%;
-    margin: 0 auto;
-}
-
-section .row .col-2 .wrapper,
-section .row .col-2 .wrap {
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: var(--line-border);
-    color: var(--heat-color);
-    background-color: #fff;
-    /* border-radius: 10px; */
-    padding-top: 30px;
-    align-items: center;
-    width: 100%;
-}
-
-section .row .col-2 .wrap {
-    padding: 10px;
-    margin: 5px;
-    margin-top: 4rem;
-}
-
-
-section .row .col-2 h4 {
-    margin-top: 3rem;
-}
-
-
-
-
-section .row .col-2 .follow .detail {
-    margin-top: 1rem;
-    width: 100%;
-}
-
-section .row .col-2 .follow .detail,
-section .row .col-2 .follow .detail div {
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
-    /* padding: 2px; */
-    align-items: center;
-}
-
-section .row .col-2 .follow .detail div p {
-    font-size: 12px;
-}
-
-section .row .col-2 .follow .detail img {
-    width: 50px;
-    border-radius: 50%;
-}
-
-
-section .row .col-2 .follow .detail .hashtag {
-    background: none;
-    border: 1px solid rgb(117, 117, 117);
-    width: 70px;
-}
-
-section .row .col-2 .follow .detail .hashtag a {
-    color: rgb(117, 117, 117);
-}
 
 /* media queries */
 @media screen and (max-width: 800px) {}
@@ -556,9 +367,39 @@ section .row .col-2 .follow .detail .hashtag a {
         position: relative;
     }
 
+    /* sidebar toglle class */
+    .none {
+        display: none;
+    }
+
+    .block {
+        display: block;
+    }
+
+    aside .sidebar .bar-close {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+
+    aside .sidebar .bar-close .logo {
+        padding: 0;
+    }
+
     aside .w3-bar-item {
         display: block;
+        padding: 0;
+        border: none;
+        font-size: 50px;
+        cursor: pointer;
+        background: none;
+        color: #b4b2b2;
+    }
 
+    aside .w3-bar-item:hover {
+        color: teal;
     }
 
     aside {
@@ -572,48 +413,6 @@ section .row .col-2 .follow .detail .hashtag a {
         display: none;
         position: absolute;
     }
-
-    /*
-
-    aside .logo {
-        display: none;
-    }
-
-    aside .sidebar {
-        width: 90%;
-        height: 70px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto;
-        display: relative;
-        background-attachment: fixed;
-    }
-
-    aside .menu-aside {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 80%;
-
-    }
-
-    aside .menu-aside .button {
-        padding-right: 20px;
-    }
-
-    aside .logo,
-    aside .menu-aside,
-    aside .menu-aside-2,
-    aside .menu-aside-footer {
-        margin: 0;
-        padding: 0;
-    }
-
-    aside .flex {
-        display: none;
-        box-shadow: none;
-    } */
 
     /* section */
     section {
@@ -657,14 +456,18 @@ section .row .col-2 .follow .detail .hashtag a {
         margin-top: 4rem;
     }
 
-    aside {
-        width: 50%;
-        height: 100%;
-    }
-
     .mobile-nav span {
         color: #000;
     }
+
+    /* aside */
+    aside {
+        width: 70%;
+        height: 100%;
+        position: fixed;
+    }
+
+    /* section */
 
     section .row .col-2 {
         display: none;
