@@ -1,4 +1,12 @@
 <template>
+    <div class="search-bar flex">
+        <input type="text" name="" id="">
+        <button>
+            <span class="material-symbols-outlined">
+                search
+            </span>
+        </button>
+    </div>
     <div class="stats flex">
         <div class="stats_box flex">
             <span class="material-symbols-outlined">
@@ -99,7 +107,10 @@ export default {
                     'November',
                     'December'],
 
-                datasets: [{ data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11] }]
+                datasets: [{
+                    data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11],
+                    backgroundColor: "blue",
+                }]
             },
             chartOptions: {
                 responsive: true
@@ -128,6 +139,7 @@ export default {
     width: 150px;
     padding: 10px;
     border-radius: 10px;
+    background-color: #fff;
 }
 
 .stats_box div {
@@ -135,5 +147,22 @@ export default {
     flex-direction: column;
     margin-left: 20px;
     padding: 5px;
+}
+
+.search-bar {
+    margin-top: 20px;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    align-items: center;
+}
+
+span {
+    color: #333;
+}
+
+.search-bar input {
+    width: 100%;
+    outline: none;
 }
 </style>

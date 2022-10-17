@@ -66,6 +66,15 @@
         <section>
             <div class="row">
                 <div class="col-1">
+
+                    <!-- show all the content of dashboard -->
+                    <div class="all-content">
+                        <!-- v-for="story of stories" @click=sliderIndicator() :key=story?.id" -->
+                        <router-view />
+                    </div>
+                </div>
+                <div class="col-2">
+
                     <div class="head">
 
                         <div class="head-left">
@@ -80,11 +89,6 @@
                             <profile />
                         </div>
 
-                    </div>
-                    <!-- show all the content of dashboard -->
-                    <div class="all-content">
-                        <!-- v-for="story of stories" @click=sliderIndicator() :key=story?.id" -->
-                        <router-view />
                     </div>
                 </div>
             </div>
@@ -109,7 +113,7 @@ export default {
     data() {
         return {
             myStyle: {
-                backgroundColor: "#fff"
+                backgroundColor: "#333"
             },
             date: new Date().toLocaleString(),
             username: "",
@@ -176,7 +180,7 @@ aside .sidebar {
     width: 15%;
     box-shadow: 0 0px 15px 0px rgb(0 0 0 / 15%);
     z-index: 900;
-    background: #FF6A64;
+    background: #fff;
 }
 
 aside .menu-aside.selected {
@@ -185,7 +189,7 @@ aside .menu-aside.selected {
 
 aside .menu-aside .button span,
 aside .menu-aside-footer .button span {
-    color: #fff;
+    color: #333;
     margin: 10px;
 }
 
@@ -194,7 +198,7 @@ aside .menu-aside-footer .button span {
     display: flex;
     align-items: center;
     height: auto;
-    color: #fff;
+    color: #333;
     padding: 5px 0;
     /* background: none; */
     margin-top: 5px;
@@ -203,7 +207,7 @@ aside .menu-aside-footer .button span {
 
 aside .button:hover {
     /* background-position: right; */
-    background: linear-gradient(to right, pink 0%, rgb(245, 60, 14) 47%, red 47%, red 50%, #FFFFFF 50%, #FFFFFF 100%);
+    background: linear-gradient(to right, pink 0%, blue 47%, rgb(160, 160, 238) 47%, rgb(176, 176, 247) 50%, #333FFF 50%, #FFFFFF 100%);
     background-size: 200%;
     background-position: left;
     transition: 5s ease-out;
@@ -221,16 +225,17 @@ aside .logo {
     margin: 0 auto;
     justify-content: center;
     padding-top: 1.5rem;
-    color: #fff;
+    color: #333;
 }
 
 section {
     width: 85%;
+    background-color: rgb(236, 236, 241);
 }
 
 /* section */
 section .row .col-1 {
-    width: 100%;
+    width: 70%;
 }
 
 section .row .head {
@@ -243,9 +248,11 @@ section .row .head {
 section .row .head .head-rigth {
     justify-content: space-between;
 }
+
 .head-left button span {
-    color:#b4b2b2;
+    color: #b4b2b2;
 }
+
 /* Notifications */
 .notif {
     margin-right: 20px;
@@ -255,7 +262,7 @@ section .row .head .head-rigth {
     display: inline-block;
     position: relative;
     padding: 0.2em;
-    /* background: #FF6A64; */
+    /* background: blue; */
     border-radius: 0.2em;
     font-size: 1.3em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -283,9 +290,9 @@ section .row .head .head-rigth {
     right: -15px;
     padding: 5px 8px;
     line-height: 100%;
-    border: 2px #fff solid;
+    border: 2px #333 solid;
     border-radius: 60px;
-    background: #FF6A64;
+    background: blue;
     opacity: 0;
     content: attr(data-count);
     opacity: 0;
@@ -347,7 +354,8 @@ section .row .col-1 .all-content {
 section .row {
     display: flex;
     height: 100vh;
-    padding: 1rem;
+    /* padding: 1rem; */
+    justify-content: space-between;
 }
 
 
@@ -405,7 +413,7 @@ section .row {
     aside {
         box-shadow: none;
         min-height: 0;
-        background: #fff;
+        background: #333;
         z-index: 999;
         left: 0;
         /* display: none; */
@@ -449,7 +457,7 @@ section .row {
         box-shadow: var(--line-border);
         position: fixed;
         align-items: center;
-        background: #fff;
+        background: #333;
         background-attachment: fixed;
         padding: 20px;
         z-index: 999;
