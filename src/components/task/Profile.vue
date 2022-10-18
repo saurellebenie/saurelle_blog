@@ -73,6 +73,8 @@ ul {
     position: relative;
     width: 30px;
     /* margin: 50px auto; */
+    margin-right: 10px;
+    border-radius: 50px;
 }
 
 .menu-container {
