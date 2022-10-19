@@ -286,7 +286,13 @@ section .row .col-2 {
   width: 30%;
 }
 
-
+/* .recent-post */
+.recent-post h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  width: 100%;
+}
 .recent-post .card,
 .recent-post,
 section .row .head {
@@ -417,4 +423,7 @@ section .row .head .head-rigth {
     transform: rotate(0deg);
   }
 }
+
+
+
 </style>

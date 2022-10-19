@@ -3,8 +3,7 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>User_ID</th>
+                <th>UserName</th>
                 <th>Title</th>
                 <th>Content</th>
                 <th>Likes</th>
@@ -13,7 +12,7 @@
         </thead>
         <tbody>
             <tr v-for="(Post,i) in Posts" :key="i">
-                <td >{{ Post.id}}</td>
+                <!-- <td >{{ Post.id}}</td> -->
                 <td>{{ Post.owner_id }}</td>
                 <td>{{ Post.title }}</td>
                 <td><a href="#">{{ Post.content }}</a></td>
@@ -37,7 +36,7 @@ export default {
                     id: 1,
                     title: "the best course at Seven",
                     content: "This is the coures ...",
-                    owner_id: 1,
+                    owner_id: "John Doe",
                     like: 12,
                     comment: 5
                 },
@@ -45,7 +44,7 @@ export default {
                     id: 2,
                     title: "the best course at GPS",
                     content: "This is the coures taht teaches...",
-                    owner_id: 2,
+                    owner_id: "Aimee meilleur",
                     like: 5,
                     comment: 9
                 },
@@ -53,7 +52,7 @@ export default {
                     id: 2,
                     title: "the best course at GPS",
                     content: "This is the coures taht teaches...",
-                    owner_id: 2,
+                    owner_id: "Saurelle benie",
                     like: 5,
                     comment: 0
                 }
