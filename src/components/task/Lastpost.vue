@@ -86,7 +86,7 @@ th{
     color: #42b983;
     font-size: 12px;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
     text-align: start;
 }
 tr th{
