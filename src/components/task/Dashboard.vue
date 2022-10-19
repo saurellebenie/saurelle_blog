@@ -35,6 +35,14 @@
             <span class="material-symbols-outlined"> monitoring </span>
             <p>Posts</p>
           </router-link>
+          <router-link to="/Dashboard/Comments" class="button">
+            <span class="material-symbols-outlined com"> chat </span>
+            <p>Comments</p>
+          </router-link>
+          <!-- <router-link to="/Dashboard/Likes" class="button">
+            <span class="material-symbols-outlined fav"> favorite </span>
+            <p>Likes</p>
+          </router-link> -->
 
           <router-link to="/Dashboard/Pages" class="button">
             <span class="material-symbols-outlined"> article </span>
@@ -162,7 +170,7 @@ export default {
 }
 
 aside {
-  min-height: 100vh;
+  height: 100vh;
   width: 15%;
   display: block;
   position: relative;
@@ -178,7 +186,7 @@ aside .w3-bar-item {
 }
 
 aside .sidebar {
-  min-height: 100vh;
+  height: 100%;
   position: fixed;
   width: 15%;
   box-shadow: 0 0px 15px 0px rgb(0 0 0 / 15%);
@@ -202,7 +210,7 @@ aside .menu-aside-footer .button span {
   align-items: center;
   height: auto;
   color: #333;
-  padding: 5px 0;
+  padding: 2px 0;
   margin: 2px auto;
   /* background: none; */
   border-radius: 10px;
@@ -236,7 +244,9 @@ aside .logo {
 
 section {
   width: 85%;
-  background-color: rgb(236, 236, 241);
+  background-color: rgb(240, 236, 236);
+  height: auto;
+  position: relative;
 }
 
 /* section */

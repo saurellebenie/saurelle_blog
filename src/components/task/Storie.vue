@@ -82,6 +82,7 @@
             </div>
         </div>
     </div>
+    <Lastpost />
 </template>
   
 <script>
@@ -95,6 +96,7 @@ import {
     CategoryScale,
     LinearScale,
 } from "chart.js";
+import Lastpost from "./Lastpost.vue";
 ChartJS.register(
     Title,
     Tooltip,
@@ -105,7 +107,7 @@ ChartJS.register(
 );
 export default {
     name: "BarChart",
-    components: { Bar },
+    components: { Bar, Lastpost },
     props: {
         chartId: {
             type: String,

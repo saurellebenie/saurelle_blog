@@ -1,5 +1,5 @@
 <template>
-    <h1>Best Posts</h1>
+    <h1>Recent post</h1>
     <table>
         <thead>
             <tr>
@@ -66,6 +66,9 @@ export default {
 </script>
 
 <style scoped>
+h1{
+    margin-top: 5rem;
+}
 table {
     width: 100%;
     margin-top: 2rem;

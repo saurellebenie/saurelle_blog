@@ -11,6 +11,8 @@ import Posts from '../components/task/Posts.vue'
 import Report from '../components/task/Report.vue'
 import Setting from '../components/task/Setting.vue'
 import User from '../components/task/User.vue'
+import Lastpost from '../components/task/Lastpost.vue'
+import Comments from '../components/task/Comments.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +36,11 @@ const router = createRouter({
       path: '/Profile',
       name: 'Profile',
       component: Profile
+    },
+    {
+      path: '/Lastpost',
+      name: 'Lastpost',
+      component: Lastpost
     },
     {
       path: '/Dashboard',
@@ -75,6 +82,11 @@ const router = createRouter({
           path: 'Setting',
           name: 'Setting',
           component: Setting
+        },
+        {
+          path: 'Comments',
+          name: 'Comments',
+          component: Comments
         },
 
       ]
