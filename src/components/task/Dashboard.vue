@@ -91,12 +91,23 @@
             </div>
           </div>
           <div class="recent-post">
-            <h1>Recent posts</h1>
+            <h1>Recent Commennt</h1>
             <div class="card">
               <div class="post-comment">
                 <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-                <p class="title"> <a href="">Client-Side vs. Server-Side Routing</a> </p>
-                <div class="date">{{ date }}</div>
+                <p class="title"> <a href="">Thanks for published this post</a> </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="post-comment">
+                <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
+                <p class="title"> <a href="">Thanks for published this post</a> </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="post-comment">
+                <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
+                <p class="title"> <a href="">Thanks for published this post</a> </p>
               </div>
             </div>
           </div>
@@ -272,6 +283,8 @@ section .row .col-2 {
   width: 30%;
 }
 
+
+.recent-post .card,
 .recent-post,
 section .row .head {
   width: 90%;
@@ -279,10 +292,13 @@ section .row .head {
   margin-top: 20px;
   padding: 5px;
   background: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
 }
-.recent-post .card{
-  width: 100%;
+.recent-post .card .post-comment a{
+  color: rgb(80, 80, 80);
+}
+.profile-pic{
+  color: orangered;
 }
 
 section .row .head {
