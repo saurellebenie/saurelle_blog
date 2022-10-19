@@ -54,11 +54,11 @@
           </router-link>
           <router-link to="/Dashboard/addStorie" class="button">
             <span class="material-symbols-outlined"> edit_document </span>
-            <p>Add Storie</p>
+            <p>Add Story</p>
           </router-link>
           <router-link to="/Dashboard/Setting" class="button">
             <span class="material-symbols-outlined"> settings </span>
-            <p>Setting</p>
+            <p>Settings</p>
           </router-link>
 
         </div>
@@ -95,19 +95,19 @@
             <div class="card">
               <div class="post-comment">
                 <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-                <p class="title"> <a href="">Thanks for published this post</a> </p>
+                <p class="title"> <a href="">Thanks for publishing this post</a> </p>
               </div>
             </div>
             <div class="card">
               <div class="post-comment">
                 <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-                <p class="title"> <a href="">Thanks for published this post</a> </p>
+                <p class="title"> <a href="">Thanks for publishingthis post</a> </p>
               </div>
             </div>
             <div class="card">
               <div class="post-comment">
                 <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-                <p class="title"> <a href="">Thanks for published this post</a> </p>
+                <p class="title"> <a href="">Thanks for publishing this post</a> </p>
               </div>
             </div>
           </div>
@@ -181,6 +181,7 @@ export default {
 }
 
 aside {
+  top: 0;
   height: 100vh;
   width: 15%;
   display: block;
@@ -203,6 +204,7 @@ aside .sidebar {
   box-shadow: 0 0px 15px 0px rgb(0 0 0 / 15%);
   z-index: 900;
   background: #fff;
+  top: 0;
 }
 
 aside .menu-aside.selected {
@@ -256,8 +258,8 @@ aside .logo {
 section {
   width: 85%;
   background-color: rgb(240, 236, 236);
-  height: auto;
-  position: relative;
+  height: 100vh;
+
 }
 
 /* section */

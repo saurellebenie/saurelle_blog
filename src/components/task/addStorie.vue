@@ -32,11 +32,14 @@
                 alignleft aligncenter alignright alignjustify | \
                 bullist numlist outdent indent | removeformat | help'
             }" />
+
+            <span class="img"><input type="file"></span>
+            <button class="submit-button" @click="savePost" type="button">Publish</button>
         </div>
 
-        <span><input type="file"></span>
 
-        <button class="submit-button" @click="savePost" type="button">Publish</button>
+
+        
     </form>
     <!-- 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 -->
 
@@ -79,13 +82,18 @@ export default {
 form {
     margin-bottom: 5rem;
     position: relative;
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 10px;
 }
 
 form .add-story {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
+    margin: 1rem auto;
 }
 
 form .add-story input,
@@ -97,7 +105,8 @@ form .add-story span {
     padding: 10px;
     align-items: center;
 }
-select{
+
+select {
     width: 15%;
     border: 1px solid rgb(167, 162, 162);
     margin-top: 10px;
@@ -123,18 +132,32 @@ input[type=text] {
     width: 200px;
     padding: 10px;
     font-family: var(--font-rigtheous);
-    background-color: black;
+    background-color: tomato;
     border: none;
     border-radius: 20px;
     color: #fff;
     margin-top: 1rem;
+    margin: 0 auto;
+}
+.img{
+    width: 50px;
+    height: 50px;
+}
+/* .img input{
+    border: none;
+} */
+label {
+    color: teal;
+    font-weight: bold;
+    margin-bottom: 2px;
 }
 
 .submit-button:hover {
     background-color: #fff;
-    border: 2px solid black;
+    border: 2px solid tomato;
     color: var(--heat-color);
     cursor: pointer;
     position: relative;
+    
 }
 </style>

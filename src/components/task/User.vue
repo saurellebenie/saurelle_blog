@@ -3,18 +3,18 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Username</th>
                 <th>Email</th>
 
                 <th>createdAt</th>
                 <th>isLoggedIn</th>
-                <th>NoPost</th>
+                <th>#Post</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="(User,i) in Users" :key="i">
-                <td>{{ User.id}}</td>
+                <!-- <td>{{ User.id}}</td> -->
                 <td>{{ User.username }}</td>
                 <td><a href="#">{{User.email}}</a></td>
                 <td>{{ User.createdAt }}</td>
