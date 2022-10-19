@@ -23,7 +23,7 @@
         </div>
         <!-- sidebar -->
         <div class="menu-aside">
-          <router-link to="/Dashboard" class="button active-color" @click="w3_close()">
+          <router-link to="/Dashboard" class="button" @click="w3_close()">
             <span class="material-symbols-outlined"> widgets </span>
             <p>Dashboard</p>
           </router-link>
@@ -203,20 +203,21 @@ aside .menu-aside-footer .button span {
   height: auto;
   color: #333;
   padding: 5px 0;
-  margin: 0 auto;
+  margin: 2px auto;
   /* background: none; */
   border-radius: 10px;
-
   font-weight: bold;
 }
-
-.active-color {
-  background: teal;
+.button:hover{
+  background-color: teal;
 }
 
-.exact-active-link {
+
+
+.exact-active{
   color: #42b983;
   font-weight: bold;
+  background: teal;
 }
 
 aside .menu-aside-footer .button {

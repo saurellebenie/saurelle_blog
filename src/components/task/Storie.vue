@@ -318,5 +318,5 @@ export default {
     width: 100%;
 }
 
-.table-wrapper thead {}
+
 </style>
