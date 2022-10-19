@@ -3,8 +3,8 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Post_ID</th>
+                
+                <th>PostID</th>
                 <th>Message</th>
                 <th>Likes</th>
                 <th>Comments</th>
@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr v-for="(comment,i) in Comments" :key="i">
-                <td>{{ comment.id}}</td>
+                
                 <td>{{ comment.post_id }}</td>
                 <td><a href="#">{{ comment.message }}</a></td>
                 <td>{{ comment.like }}</td>
@@ -91,7 +91,7 @@ th {
     color: #42b983;
     font-size: 12px;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
     text-align: start;
 }
 

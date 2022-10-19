@@ -28,11 +28,12 @@
             <p>Dashboard</p>
           </router-link>
           <router-link to="/Dashboard/Report" class="button">
-            <span class="material-symbols-outlined"> report </span>
-            <p>Report annual</p>
+            <span class="material-symbols-outlined"> monitoring </span>
+            
+            <p> Annual report</p>
           </router-link>
           <router-link to="/Dashboard/Posts" class="button">
-            <span class="material-symbols-outlined"> monitoring </span>
+            <span class="material-symbols-outlined"> report </span>
             <p>Posts</p>
           </router-link>
           <router-link to="/Dashboard/Comments" class="button">
@@ -91,7 +92,7 @@
             </div>
           </div>
           <div class="recent-post">
-            <h1>Recent Commennt</h1>
+            <h1>Recent Comment</h1>
             <div class="card">
               <div class="post-comment">
                 <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>

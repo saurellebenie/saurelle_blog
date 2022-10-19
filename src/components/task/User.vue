@@ -7,8 +7,8 @@
                 <th>Username</th>
                 <th>Email</th>
 
-                <th>createdAt</th>
-                <th>isLoggedIn</th>
+                <th>CreatedAt</th>
+                <th>IsLoggedIn</th>
                 <th>#Post</th>
             </tr>
         </thead>
@@ -93,7 +93,7 @@ th {
     color: #42b983;
     font-size: 12px;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
     text-align: start;
 }
 

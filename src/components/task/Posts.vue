@@ -3,8 +3,8 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>User_name</th>
+                
+                <th>Username</th>
                 <th>Title</th>
                 <th>Content</th>
                 <th>Likes</th>
@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             <tr v-for="(Post,i) in Posts" :key="i">
-                <td >{{ Post.id}}</td>
+                <!-- <td >{{ Post.id}}</td> -->
                 <td>{{ Post.username }}</td>
                 <td>{{ Post.title }}</td>
                 <td><a href="#">{{ Post.content }}</a></td>
@@ -84,7 +84,7 @@ th{
     color: #42b983;
     font-size: 12px;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
     text-align: start;
 }
 tr th{
