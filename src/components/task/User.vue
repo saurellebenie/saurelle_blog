@@ -41,7 +41,7 @@ export default {
                     email: "kambang@mail.com",
                     password: 'heroTester',
                     isLoggedIn: true,
-                    createdAt: new Date(Date.now()),
+                    createdAt: new Date().toLocaleDateString(),
                     NoPost: 3
                 },
                 {
@@ -50,7 +50,7 @@ export default {
                     email: "JohnDoe@email.com",
                     password: 'heroTest',
                     isLoggedIn: true,
-                    createdAt: new Date(Date.now()),
+                    createdAt: new Date().toLocaleDateString(),
                     NoPost: 5
                 },
                 {
@@ -59,7 +59,7 @@ export default {
                     email: "saurelle@email.com",
                     password: 'atlhdj12',
                     isLoggedIn: false,
-                    createdAt: new Date(Date.now()),
+                    createdAt: new Date().toLocaleDateString(),
                     NoPost: 8
                 },
 

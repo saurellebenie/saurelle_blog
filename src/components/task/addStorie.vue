@@ -107,7 +107,7 @@ form .add-story span {
 }
 
 select {
-    width: 15%;
+    width: 30%;
     border: 1px solid rgb(167, 162, 162);
     margin-top: 10px;
 }
