@@ -64,6 +64,12 @@ export default {
 }
 </script>
 <style scoped>
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  width: 100%;
+}
 .page-container {
     padding: 10px;
     margin: 0 auto;

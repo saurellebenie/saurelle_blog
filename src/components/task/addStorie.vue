@@ -113,7 +113,12 @@ select {
     font-size: 12px;
     font-family: inherit;
 }
-
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  width: 100%;
+}
 textarea,
 input,
 select {

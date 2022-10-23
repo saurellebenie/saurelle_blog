@@ -216,7 +216,12 @@ export default {
 
 <style scoped>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
-
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  width: 100%;
+}
 #container {
   width: 100%;
   display: flex;
