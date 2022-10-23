@@ -3,7 +3,7 @@
   <div :class="{ 'onScroll': !view.topOfPage}" class="nav">
     <nav class="navbar">
       <!-- LOGO -->
-      <div class="logo"> Swdb <img src="../../assets/logo.png" alt=""></div>
+      <div class="logo"> GoBlog+</div>
       <!-- NAVIGATION MENU -->
       <ul class="nav-links">
         <!-- USING CHECKBOX HACK -->
@@ -37,59 +37,131 @@
     <div class="blog">
 
       <div class="card">
-        <div class="number">01</div>
-        <div class="post-comment">
-          <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-          <p class="title"> <a href="">Client-Side vs. Server-Side Routing</a> </p>
-          <div class="date">{{ date }}</div>
-        </div>
+        <router-link to="" class="blog-container">
+
+          <div class="blog-header flex">
+            <div class="profile-pic">
+              <img src="../../assets/hero.png" alt="">
+            </div>
+            <div class="blog-author--no-cover">
+              <h3>Russ Beye</h3>
+            </div>
+          </div>
+
+          <div class="blog-body">
+            <div class="blog-title">
+              <h2><a href="#">This Post Has No Cover Image</a></h2>
+            </div>
+            <div class="blog-summary">
+              <p>Here is an example of a post without a cover image. You don't always have to have a cover image. In
+                fact.
+              </p>
+            </div>
+            <div class="footer flex">
+              <div class="like">
+                <span class="material-symbols-outlined">
+                  thumb_up
+                </span>
+                <span>20</span>
+              </div>
+              <div class="comment">
+                <span class="material-symbols-outlined">
+                  maps_ugc
+                </span>
+                <span>3</span>
+              </div>
+            </div>
+          </div>
+        </router-link>
       </div>
       <div class="card">
-        <div class="number">02</div>
-        <div class="post-comment">
-          <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-          <p class="title"> <a href="">Client-Side vs. Server-Side Routing</a> </p>
-          <div class="date">{{ date }}</div>
-        </div>
+        <router-link to="" class="blog-container">
+
+          <div class="blog-header flex">
+            <div class="profile-pic">
+              <img src="../../assets/hero.png" alt="">
+            </div>
+            <div class="blog-author--no-cover">
+              <h3>Russ Beye</h3>
+            </div>
+          </div>
+
+          <div class="blog-body">
+            <div class="blog-title">
+              <h2><a href="#">This Post Has No Cover Image</a></h2>
+            </div>
+            <div class="blog-summary">
+              <p>Here is an example of a post without a cover image. You don't always have to have a cover image. In
+                fact.
+              </p>
+            </div>
+            <div class="footer flex">
+              <div class="like">
+                <span class="material-symbols-outlined">
+                  thumb_up
+                </span>
+                <span>20</span>
+              </div>
+              <div class="comment">
+                <span class="material-symbols-outlined">
+                  maps_ugc
+                </span>
+                <span>3</span>
+              </div>
+            </div>
+          </div>
+        </router-link>
       </div>
       <div class="card">
-        <div class="number">03</div>
-        <div class="post-comment">
-          <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-          <p class="title"> <a href="">Client-Side vs. Server-Side Routing</a> </p>
-          <div class="date">{{ date }}</div>
-        </div>
+        <router-link to="" class="blog-container">
+
+          <div class="blog-header flex">
+            <div class="profile-pic">
+              <img src="../../assets/hero.png" alt="">
+            </div>
+            <div class="blog-author--no-cover">
+              <h3>Russ Beye</h3>
+            </div>
+          </div>
+
+          <div class="blog-body">
+            <div class="blog-title">
+              <h2><a href="#">This Post Has No Cover Image</a></h2>
+            </div>
+            <div class="blog-summary">
+              <p>Here is an example of a post without a cover image. You don't always have to have a cover image. In
+                fact.
+              </p>
+            </div>
+            <div class="footer flex">
+              <div class="like">
+                <span class="material-symbols-outlined">
+                  thumb_up
+                </span>
+                <span>20</span>
+              </div>
+              <div class="comment">
+                <span class="material-symbols-outlined">
+                  maps_ugc
+                </span>
+                <span>3</span>
+              </div>
+            </div>
+          </div>
+        </router-link>
       </div>
-      <div class="card">
-        <div class="number">04</div>
-        <div class="post-comment">
-          <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-          <p class="title"> <a href="">Client-Side vs. Server-Side Routing</a> </p>
-          <div class="date">{{ date }}</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="number">05</div>
-        <div class="post-comment">
-          <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-          <p class="title"> <a href="">Client-Side vs. Server-Side Routing</a> </p>
-          <div class="date">{{ date }}</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="number">06</div>
-        <div class="post-comment">
-          <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
-          <p class="title"> <a href="">Client-Side vs. Server-Side Routing</a> </p>
-          <div class="date">{{ date }}</div>
-        </div>
-      </div>
+
       <div class="pumpkin"><img
           src="../../assets/kisspng-javascript-web-development-logo-script-clipart-5adc4c1ac4eb87.9915338015243868428066.png"
-          alt=""></div>
-
+          alt="">
+      </div>
     </div>
+
   </div>
+  
+  
+  
+  
   <div class="main">
     <div class="story">
 
@@ -109,21 +181,18 @@
                   <div class="flex justify-between items-center mb-5 text-gray-500">
                     <span
                       class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                      <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z">
-                        </path>
-                      </svg>
+
                       Tutorial
                     </span>
                     <span class="text-sm">14 days ago</span>
                   </div>
                   <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">How to
                       quickly deploy a static website</a></h2>
-                  <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap
+                  <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to
+                    bootstrap
                     lots
-                    of websites and are becoming the basis for a variety of tools that even influence both web designers
+                    of websites and are becoming the basis for a variety of tools that even influence both web
+                    designers
                     and
                     developers influence both web designers and developers.</p>
                   <div class="flex justify-between items-center">
@@ -136,12 +205,6 @@
                     <a href="#"
                       class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
                       Read more
-                      <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          clip-rule="evenodd"></path>
-                      </svg>
                     </a>
                   </div>
                 </article>
@@ -150,22 +213,19 @@
                   <div class="flex justify-between items-center mb-5 text-gray-500">
                     <span
                       class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                      <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                          d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
-                          clip-rule="evenodd"></path>
-                        <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
-                      </svg>
-                      Article
+                      <i class="fa-brands fa-vuejs"></i>
+                      Vuejs
                     </span>
                     <span class="text-sm">14 days ago</span>
                   </div>
-                  <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">Our first
+                  <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">Our
+                      first
                       project with vue</a></h2>
-                  <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap
+                  <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to
+                    bootstrap
                     lots
-                    of websites and are becoming the basis for a variety of tools that even influence both web designers
+                    of websites and are becoming the basis for a variety of tools that even influence both web
+                    designers
                     and
                     developers influence both web designers and developers.</p>
                   <div class="flex justify-between items-center">
@@ -311,3 +371,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.footer{
+  justify-content: space-between;
+  padding: 10px;
+}
+.footer .comment,
+.footer .like{
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+.footer span{
+  color: #333;
+  padding: 2px;
+}
+</style>

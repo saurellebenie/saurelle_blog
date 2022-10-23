@@ -4,22 +4,22 @@
         <thead>
             <tr>
                 <!-- <th>ID</th> -->
-                <th>Username</th>
-                <th>Email</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
 
-                <th>CreatedAt</th>
-                <th>IsLoggedIn</th>
-                <th>#Post</th>
+                <th scope="col">CreatedAt</th>
+                <th scope="col">IsLoggedIn</th>
+                <th scope="col">#Post</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="(User,i) in Users" :key="i">
                 <!-- <td>{{ User.id}}</td> -->
-                <td>{{ User.username }}</td>
-                <td><a href="#">{{User.email}}</a></td>
-                <td>{{ User.createdAt }}</td>
-                <td>{{ User.isLoggedIn }}</td>
-                <td>{{User.NoPost}}</td>
+                <td data-label="Username">{{ User.username }}</td>
+                <td data-label="Email"><a href="#">{{User.email}}</a></td>
+                <td data-label="CreateAt">{{ User.createdAt }}</td>
+                <td data-label="IsLoggedIn">{{ User.isLoggedIn }}</td>
+                <td data-label="#Post">{{User.NoPost}}</td>
 
             </tr>
         </tbody>
@@ -71,37 +71,4 @@ export default {
 </script>
 
 <style scoped>
-table {
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    background-color: #fff;
-    border-collapse: collapse;
-}
-
-thead,
-tbody {
-    /* border: 1px solid #333; */
-}
-
-td {
-    padding: 20px;
-    text-align: start;
-}
-
-th {
-    color: #42b983;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 20px;
-    text-align: start;
-}
-
-tr th {
-    background-color: #f5efe7;
-}
-
-tr:nth-child(even) {
-    background-color: #f5efe7;
-}
 </style>

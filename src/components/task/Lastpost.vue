@@ -3,21 +3,21 @@
     <table>
         <thead>
             <tr>
-                <th>UserName</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Likes</th>
-                <th>Comments</th>
+                <th scope="col">UserName</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Likes</th>
+                <th scope="col">Comments</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="(Post,i) in Posts" :key="i">
                 <!-- <td >{{ Post.id}}</td> -->
-                <td>{{ Post.owner_id }}</td>
-                <td>{{ Post.title }}</td>
-                <td><a href="#">{{ Post.content }}</a></td>
-                <td>{{Post.like}}</td>
-                <td>{{Post.comment}}</td>
+                <td data-label="UserName">{{ Post.owner_id }}</td>
+                <td data-label="Title">{{ Post.title }}</td>
+                <td data-label="Content"><a href="#">{{ Post.content }}</a></td>
+                <td data-label="Likes">{{Post.like}}</td>
+                <td data-label="Comments">{{Post.comment}}</td>
             </tr>
         </tbody>
     </table>
@@ -65,34 +65,5 @@ export default {
 </script>
 
 <style scoped>
-h1{
-    margin-top: 5rem;
-}
-table {
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    background-color: #fff;
-    border-collapse: collapse;
-}
-thead,tbody{
-    /* border: 1px solid #333; */
-}
-td{
-    padding: 20px;
-    text-align: start;
-}
-th{
-    color: #42b983;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 20px;
-    text-align: start;
-}
-tr th{
-    background-color: #f5efe7;
-}
-tr:nth-child(even){
-    background-color: #f5efe7;
-}
+
 </style>

@@ -1,25 +1,20 @@
 <template>
   <div id="container">
     <!-- mobile nav -->
-    <nav class="mobile-nav">
-      <div class="search">
-        <span class="material-symbols-outlined">search</span><input type="text" name="" id="" placeholder="search" />
-      </div>
-      <router-link to="/Dashboard/Notification">
-        <span class="material-symbols-outlined"> notifications </span>
-      </router-link>
-    </nav>
-    <!-- end mobile nav -->
+
     <!-- sidebar -->
     <aside id="mySidebar" v-bind:class="[isActive ? 'block' : 'none']">
       <div class="sidebar">
-        <div class="bar-close">
+        <div class="bar-close flex">
           <!-- LOGO -->
           <router-link to="/">
-            <div class="logo">GoBlog</div>
+            <div class="logo">GoBlog+</div>
           </router-link>
           <!-- icone close -->
-          <button @click="w3_close()" class="w3-bar-item">&times;</button>
+          <button @click="w3_close()" class="w3-bar-item"><span class="material-symbols-outlined">
+              close
+            </span>
+          </button>
         </div>
         <!-- sidebar -->
         <div class="menu-aside">
@@ -29,7 +24,6 @@
           </router-link>
           <router-link to="/Dashboard/Report" class="button">
             <span class="material-symbols-outlined"> monitoring </span>
-            
             <p> Annual report</p>
           </router-link>
           <router-link to="/Dashboard/Posts" class="button">
@@ -67,7 +61,35 @@
     </aside>
     <!-- end side bar -->
     <!-- content page -->
+
+
     <section>
+      <!-- header -->
+
+      <div class="top-header flex">
+
+        <div class="welcon-text flex items-center">
+          <span class="material-symbols-outlined" @click="w3_open()">
+            menu
+          </span>
+          <h1>Hi SAURELLE WHAT'S UP</h1>
+        </div>
+        <div class="head">
+          <div class="head-left">
+            <div class="notif">
+              <div class="notification"></div>
+            </div>
+            <span class="material-symbols-outlined">
+              mail
+            </span>
+          </div>
+          <div class="head-right flex">
+
+            <profile />
+          </div>
+        </div>
+      </div>
+      <!-- contain -->
       <div class="row flex">
         <div class="col-1">
           <!-- show all the content of dashboard -->
@@ -77,20 +99,7 @@
           </div>
         </div>
         <div class="col-2">
-          <div class="head">
-            <div class="head-left">
-              <div class="notif">
-                <div class="notification"></div>
-              </div>
-              <span class="material-symbols-outlined">
-                mail
-              </span>
-            </div>
-            <div class="head-right flex">
-
-              <profile />
-            </div>
-          </div>
+          <!-- recent comment -->
           <div class="recent-post">
             <h1>Recent Comment</h1>
             <div class="card">
@@ -110,6 +119,45 @@
                 <div class="profile-pic"><img src="../../assets/hero.png" alt="">name of the person</div>
                 <p class="title"> <a href="">Thanks for publishing this post</a> </p>
               </div>
+            </div>
+          </div>
+          <!-- social media -->
+          <div class="social-media">
+            <h1>Top social Media Shared</h1>
+            <div class="face book">
+              <div class="icon flex">
+                <span><i class="fab fa-facebook-f"></i></span>
+                <span>Facebook</span>
+              </div>
+              <span>90k</span>
+            </div>
+            <div class="what face">
+              <div class="icon flex">
+                <span><i class="fa fa-whatsapp"></i></span>
+                <span>Google</span>
+              </div>
+              <span>90k</span>
+            </div>
+            <div class="Link face">
+              <div class="icon flex">
+                <span><i class="fab fa-linkedin-in"></i></span>
+                <span>linkedin</span>
+              </div>
+              <span>90k</span>
+            </div>
+            <div class="twit face">
+              <div class="icon flex">
+                <span><i class="fa fa-twitter"></i></span>
+                <span>twiter</span>
+              </div>
+              <span>90k</span>
+            </div>
+            <div class="tele face">
+              <div class="icon flex">
+                <span><i class="fa fa-telegram"></i></span>
+                <span>telegram</span>
+              </div>
+              <span>90k</span>
             </div>
           </div>
         </div>
@@ -173,14 +221,68 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   position: absolute;
+  background: #EFEFEF;
 }
 
-.mobile-nav {
-  display: none;
+/* top headeer */
+.top-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 60px;
+  background-color: #fff;
+  align-items: center;
+  padding: 0.6rem 0.7rem;
+  top: 0;
+  position: fixed;
+  margin-bottom: 2rem;
 }
 
+.top-header .welcon-text h1 {
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.top-header .welcon-text span {
+  color: #05ab9f;
+  cursor: pointer;
+}
+
+.top-header .head {
+  display: flex;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  margin-right: 10px;
+  position: fixed;
+  right: 0;
+}
+
+
+.top-header .head .head-rigth {
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.head-left {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.head-left span {
+  color: #333;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 2px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* sidebar */
 aside {
   top: 0;
   height: 100vh;
@@ -196,6 +298,12 @@ aside .menu-aside {
 
 aside .w3-bar-item {
   display: none;
+}
+
+aside .w3-bar-item span {
+  color: #05ab9f;
+  margin-top: 20px;
+
 }
 
 aside .sidebar {
@@ -227,19 +335,25 @@ aside .menu-aside-footer .button span {
   padding: 2px 0;
   margin: 2px auto;
   /* background: none; */
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: bold;
+
 }
-.button:hover{
+
+.button:hover {
   background-color: teal;
 }
 
 
 
-.exact-active{
+.exact-active {
   color: #42b983;
   font-weight: bold;
   background: teal;
+}
+
+.exact-active span {
+  color: #42b983;
 }
 
 aside .menu-aside-footer .button {
@@ -258,9 +372,6 @@ aside .logo {
 
 section {
   width: 85%;
-  background-color: rgb(240, 236, 236);
-  height: 100vh;
-
 }
 
 /* section */
@@ -269,16 +380,16 @@ section .row .col-1 {
 }
 
 section .row .col-1 .all-content {
-  margin-top: 2rem;
-  width: 90%;
+  /* margin-top: 2rem; */
+  width: 100%;
   margin: 0 auto;
+  
 }
 
 section .row {
   display: flex;
-  height: 100vh;
-  /* padding: 1rem; */
-  /* justify-content: space-between; */
+  margin-top: 5rem;
+  padding: 20px 20px 0;
 }
 
 /* col rigth */
@@ -287,69 +398,121 @@ section .row .col-2 {
 }
 
 /* .recent-post */
-.recent-post h1{
-  text-align: center;
-  font-weight: bold;
-  font-size: 15px;
-  width: 100%;
-}
+
+
+.social-media,
 .recent-post .card,
-.recent-post,
-section .row .head {
+.recent-post {
   width: 90%;
   margin: 0 auto;
   margin-top: 20px;
   padding: 5px;
   background: #fff;
   border-radius: 10px;
+
+
 }
-.recent-post .card .post-comment a{
+
+.recent-post .card .post-comment a {
   color: rgb(80, 80, 80);
 }
-.profile-pic{
+
+.profile-pic {
   color: orangered;
 }
 
-section .row .head {
+/* social*/
+.social-media,
+.recent-post {
+  box-shadow: 8px 8px 16px #3232321a;
+}
+
+/* {
+  padding: 15px 25px;
+  background: #E7E9FF;
+  box-shadow: 8px 8px 16px #3232321a;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+} */
+
+/* {
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: 400;
+  font-weight: bold;
+  text-align: center;
+} */
+
+.face,
+.icon {
   justify-content: space-between;
   display: flex;
-}
-
-
-section .row .head .head-rigth {
-  justify-content: space-between;
   align-items: center;
+  margin: 5px;
+  font-weight: lighter;
+  padding: 5px;
 }
 
-.head-left {
-  display: flex;
-  align-items: center;
+.icon i {
+  padding: 10px;
+  font-size: 12px;
+  color: brown;
+  background-color: rgb(233, 225, 225);
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
-.head-left span {
+.book i {
   color: blue;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  margin: 2px;
-  border-radius: 20px;
+  background-color: rgb(167, 149, 248);
+}
+
+.what i {
+  color: green;
+  background-color: rgb(222, 238, 222);
+}
+
+.Link i {
+  color: blue;
+  background-color: rgb(167, 149, 248);
+}
+
+.twit i {
+  color: aqua;
+  background-color: rgb(218, 247, 247);
+}
+
+.tele i {
+  color: rgb(92, 255, 71);
+  background-color: rgb(247, 229, 225);
+}
+
+/* table style */
+.table-wrapper {
+  width: 100%;
 }
 
 /* Notifications */
 .notif {
-  margin-right: 5px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .notification {
   display: inline-block;
   position: relative;
   padding: 0.2em;
-  color: blue;
+  color: #333;
   border-radius: 0.2em;
   font-size: 1.3em;
 }
 
 .notification::before,
 .notification::after {
-  color: blue;
+  color: #333;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -371,7 +534,7 @@ section .row .head .head-rigth {
   line-height: 100%;
   border: 2px #333 solid;
   border-radius: 60px;
-  background: blue;
+  background: #333;
   opacity: 0;
   content: attr(data-count);
   opacity: 0;
@@ -425,5 +588,71 @@ section .row .head .head-rigth {
 }
 
 
+/* media querry */
+@media (max-width: 958px) {
 
+  /* aside respon */
+  .block {
+    display: block;
+  }
+
+  .none {
+    display: none;
+  }
+
+  /* aside */
+
+  aside .bar-close {
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  aside {
+    position: absolute;
+  }
+
+  aside .w3-bar-item {
+    display: block;
+  }
+
+  aside .sidebar {
+    width: 200px;
+  }
+
+  .col-2 {
+    display: none;
+  }
+
+  section {
+    position: relative;
+    width: 100%;
+  }
+
+  section .row .col-1 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+
+
+
+
+
+
+
+  /* section */
+
+  .top-header {
+    width: 100%;
+
+  }
+
+
+}
 </style>
