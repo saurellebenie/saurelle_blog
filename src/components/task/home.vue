@@ -1,6 +1,6 @@
 <template>
 
-  <div :class="{ 'onScroll': !view.topOfPage}" class="nav">
+  <div :class="{ 'onScroll': !view.topOfPage }" class="nav">
     <nav class="navbar">
       <!-- LOGO -->
       <div class="logo"> GoBlog+</div>
@@ -33,8 +33,9 @@
 
   <!-- featured -->
   <div class="container-Featured">
-    <h1>Featured</h1>
-    <div class="blog">
+    <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 :text-white text-center">
+      Featured</h2>
+    <div class="blog flex-wrap">
 
       <div class="card">
         <router-link to="" class="blog-container">
@@ -44,16 +45,16 @@
               <img src="../../assets/hero.png" alt="">
             </div>
             <div class="blog-author--no-cover">
-              <h3>Russ Beye</h3>
+              <span class="font-medium :text-white">Russ Beye</span>
             </div>
           </div>
 
           <div class="blog-body">
             <div class="blog-title">
-              <h2><a href="#">This Post Has No Cover Image</a></h2>
+              <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 :text-white"><a href="#">This Post Has No Cover Image</a></h2>
             </div>
             <div class="blog-summary">
-              <p>Here is an example of a post without a cover image. You don't always have to have a cover image. In
+              <p class="mb-5 font-light text-gray-500 :text-gray-400">Here is an example of a post without a cover image. You don't always have to have a cover image. In
                 fact.
               </p>
             </div>
@@ -82,16 +83,16 @@
               <img src="../../assets/hero.png" alt="">
             </div>
             <div class="blog-author--no-cover">
-              <h3>Russ Beye</h3>
+              <span class="font-medium :text-white">Russ Beye</span>
             </div>
           </div>
 
           <div class="blog-body">
             <div class="blog-title">
-              <h2><a href="#">This Post Has No Cover Image</a></h2>
+              <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 :text-white"><a href="#">This Post Has No Cover Image</a></h2>
             </div>
             <div class="blog-summary">
-              <p>Here is an example of a post without a cover image. You don't always have to have a cover image. In
+              <p class="mb-5 font-light text-gray-500 :text-gray-400">Here is an example of a post without a cover image. You don't always have to have a cover image. In
                 fact.
               </p>
             </div>
@@ -120,16 +121,16 @@
               <img src="../../assets/hero.png" alt="">
             </div>
             <div class="blog-author--no-cover">
-              <h3>Russ Beye</h3>
+              <span class="font-medium :text-white">Russ Beye</span>
             </div>
           </div>
 
           <div class="blog-body">
             <div class="blog-title">
-              <h2><a href="#">This Post Has No Cover Image</a></h2>
+              <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 :text-white"><a href="#">This Post Has No Cover Image</a></h2>
             </div>
             <div class="blog-summary">
-              <p>Here is an example of a post without a cover image. You don't always have to have a cover image. In
+              <p class="mb-5 font-light text-gray-500 :text-gray-400">Here is an example of a post without a cover image. You don't always have to have a cover image. In
                 fact.
               </p>
             </div>
@@ -138,7 +139,7 @@
                 <span class="material-symbols-outlined">
                   thumb_up
                 </span>
-                <span>20</span>
+                <span class="">20</span>
               </div>
               <div class="comment">
                 <span class="material-symbols-outlined">
@@ -158,37 +159,34 @@
     </div>
 
   </div>
-  
-  
-  
-  
+
+
+
+
   <div class="main">
     <div class="story">
 
       <div class="container">
         <div class="left">
-          <section class="bg-white dark:bg-gray-900">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <section class=":bg-gray-900">
+            <div class=" mx-auto lg:py-16 lg:px-6">
               <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-                <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 :text-white">
                   All story</h2>
-                <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test
-                  assumptions and connect with the needs of your audience early and often.</p>
               </div>
-              <div class="grid gap-8 lg:grid-cols-2">
-                <article
-                  class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+              <div class="grid">
+                <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md :bg-gray-800 :border-gray-700">
                   <div class="flex justify-between items-center mb-5 text-gray-500">
                     <span
-                      class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                      class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded :bg-primary-200 :text-primary-800">
 
                       Tutorial
                     </span>
                     <span class="text-sm">14 days ago</span>
                   </div>
-                  <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">How to
+                  <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 :text-white"><a href="#">How to
                       quickly deploy a static website</a></h2>
-                  <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to
+                  <p class="mb-5 font-light text-gray-500 :text-gray-400">Static websites are now used to
                     bootstrap
                     lots
                     of websites and are becoming the basis for a variety of tools that even influence both web
@@ -198,30 +196,29 @@
                   <div class="flex justify-between items-center">
                     <div class="flex items-center space-x-4">
                       <img class="w-7 h-7 rounded-full" src="../../assets/hero.png" alt="Jese Leos avatar" />
-                      <span class="font-medium dark:text-white">
+                      <span class="font-medium :text-white">
                         Jese Leos
                       </span>
                     </div>
                     <a href="#"
-                      class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+                      class="inline-flex items-center font-medium text-primary-600 :text-primary-500 hover:underline">
                       Read more
                     </a>
                   </div>
                 </article>
-                <article
-                  class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md :bg-gray-800 :border-gray-700">
                   <div class="flex justify-between items-center mb-5 text-gray-500">
                     <span
-                      class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                      class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded :bg-primary-200 :text-primary-800">
                       <i class="fa-brands fa-vuejs"></i>
                       Vuejs
                     </span>
                     <span class="text-sm">14 days ago</span>
                   </div>
-                  <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">Our
+                  <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 :text-white"><a href="#">Our
                       first
                       project with vue</a></h2>
-                  <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to
+                  <p class="mb-5 font-light text-gray-500 :text-gray-400">Static websites are now used to
                     bootstrap
                     lots
                     of websites and are becoming the basis for a variety of tools that even influence both web
@@ -231,12 +228,12 @@
                   <div class="flex justify-between items-center">
                     <div class="flex items-center space-x-4">
                       <img class="w-7 h-7 rounded-full" src="../../assets/hero.png" alt="Jese Leos avatar" />
-                      <span class="font-medium dark:text-white">
+                      <span class="font-medium :text-white">
                         Bonnie Green
                       </span>
                     </div>
                     <a href="#"
-                      class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+                      class="inline-flex items-center font-medium text-primary-600 :text-primary-500 hover:underline">
                       Read more
                       <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -259,7 +256,8 @@
 
             <div class="topics animate__animated animate__flipInY">
 
-              <h1 class="h2">Topics</h1>
+              <h2 class="mb-4 text-2xl lg:text-2xl tracking-tight font-extrabold text-gray-900 :text-white">
+                Featured</h2>
 
               <a href="#" class="topic-btn">
                 <span class="material-symbols-outlined">
@@ -284,7 +282,8 @@
               </a>
 
             </div>
-            <h1>Tags</h1>
+            <h2 class="mb-4 text-2xl lg:text-2xl tracking-tight font-extrabold text-gray-900 :text-white">
+              Tags</h2>
             <div class="wrapper animate__animated animate__flipInY">
 
               <button class="hashtag"> <a href="#">#mongodb</a> </button>
@@ -373,17 +372,19 @@ export default {
 </script>
 
 <style scoped>
-.footer{
+.footer {
   justify-content: space-between;
   padding: 10px;
 }
+
 .footer .comment,
-.footer .like{
+.footer .like {
   align-items: center;
   display: flex;
   cursor: pointer;
 }
-.footer span{
+
+.footer span {
   color: #333;
   padding: 2px;
 }

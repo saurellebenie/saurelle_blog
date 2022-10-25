@@ -13,6 +13,7 @@ import Setting from '../components/task/Setting.vue'
 import User from '../components/task/User.vue'
 import Lastpost from '../components/task/Lastpost.vue'
 import Comments from '../components/task/Comments.vue'
+import BarChart from '../components/Chart/BarChart.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,6 +42,11 @@ const router = createRouter({
       path: '/Lastpost',
       name: 'Lastpost',
       component: Lastpost
+    },
+    {
+      path: '/BarChart',
+      name: 'BarChart',
+      component: BarChart
     },
     {
       path: '/Dashboard',

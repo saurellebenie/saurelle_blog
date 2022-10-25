@@ -28,12 +28,14 @@
    box-sizing: border-box;
    list-style: none;
    text-decoration: none;
-   font-family: 'Roboto', sans-serif;
+   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
 
 body {
    /* font-family: var(--font-rigtheous); */
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: #EFEFEF;
 }
 
 .material-symbols-outlined {
@@ -67,16 +69,13 @@ body {
    display: var(--display-flex);
    align-items: center;
 }
-h2{
-   font-weight: bold;
-  font-size: 1.5em;
-  width: 100%;
-}
+
 h1 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 2em;
-  width: 100%;
+   text-align: center;
+   font-weight: bold;
+   font-size: 1.5rem;
+   width: 100%;
+   /* margin-top: 2rem; */
 }
 
 /* image qui bouge */
@@ -160,7 +159,7 @@ h1 {
    /* line-height: 1.1; */
    /* color: hsl(218, 23%, 23%); */
    /* margin-left: 1rem; */
-   display: var(--display-flex);
+   /* display: var(--display-flex); */
    align-items: center;
 }
 
@@ -168,6 +167,7 @@ h1 {
    color: var(--red-color);
    font-size: 3rem;
 }
+
 .logo img {
    width: 50px;
 }
@@ -175,7 +175,7 @@ h1 {
 /* ============================================================Main==================================================== */
 
 .main {
-   background-color: hsl(0, 0%, 97%);
+   background: #EFEFEF;
    width: 100%;
    height: auto;
 }
@@ -266,7 +266,7 @@ NAVBAR STYLING STARTS
 
 /* .hero-btn:hover, */
 .header-btn {
-   background-color: var(--red-color);
+   background-color: teal;
    padding: 0;
 }
 
@@ -291,21 +291,22 @@ input[type=checkbox],
  ============================================ */
 .hero {
    width: 100%;
-   background-color: #DDDDDD;
    color: var(--title-color);
    height: 300px;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
 }
 
 .hero-blog {
-   width: 90%;
+   width: 50%;
    margin: 0 auto;
    padding: 2rem 0rem;
-   margin-top: 4rem;
+   margin: 4rem auto;
    /* line-height: 2; */
-   position: relative;
-   align-items: flex-start;
    display: flex;
    flex-direction: column;
+   align-items: center;
 }
 
 .hero-blog p {
@@ -324,20 +325,21 @@ input[type=checkbox],
    color: #fff;
    width: 150px;
    border-radius: 20px;
-   margin: 0 auto;
+
 }
 
 
 .hero-btn {
-   background: #000;
+   background: #333;
    padding: 10px;
+   margin: 0 auto;
 }
 
 
 
 .hero-btn:hover {
-   background-color: #FF4B2B;
-   color: #000;
+   background-color: teal;
+   color: #fff;
 }
 
 
@@ -353,7 +355,7 @@ featured
    width: 90%;
    margin: 0 auto;
    margin-top: 3rem;
-   
+   background: #EFEFEF;
 }
 
 /* .container-Featured h1,
@@ -373,13 +375,15 @@ h1 {
    display: var(--display-flex);
    /* height: 100px; */
    /* justify-content: var(--justify-content); */
+   margin: 10px auto;
    width: 380px;
-   margin-bottom: 20px;
+   background-color: #fff;
+   box-shadow: 0 0px 15px 0px rgb(0 0 0 / 15%);
+   padding: 12px;
 }
 
 .container-Featured .blog {
-   display: grid;
-   grid-template-columns: auto auto auto;
+   display: flex;
    margin-top: 4rem;
 }
 
@@ -423,7 +427,7 @@ span {
 }
 
 .left {
-   margin-top: 2rem;
+   /* margin-top: 2rem; */
    width: 60%;
    position: relative;
 }
@@ -497,7 +501,7 @@ span {
 }
 
 .right .topics .topic-btn span {
-   background: rgb(46, 45, 45);
+   background: rgb(104, 102, 102);
    /* background-color: var(--color-primary); */
    border-radius: 10px 0 0 10px;
    width: 80px;
@@ -539,7 +543,7 @@ span {
 .hashtag {
    padding: 10px;
    margin: 5px;
-   background-color: rgb(46, 45, 45);
+   background-color: rgb(104, 102, 102);
    border: none;
    border-radius: 20px;
 }
@@ -569,90 +573,6 @@ span {
    color: var(--color-primary);
 }
 
-/* tables */
-table {
-   /* border: 1px solid #ccc; */
-   border-collapse: collapse;
-   margin: 0;
-   padding: 0;
-   width: 100%;
-   table-layout: fixed;
- }
- 
- table tr {
-   background-color: #f8f8f8;
-   /* border: 1px solid #ddd; */
-   padding: .35em;
- }
- 
- table th,
- table td {
-   padding: .825em;
-   /* text-align: center; */
-   /* padding: 20px; */
-     text-align: start;
- }
- 
- table th {
-   font-size: .85em;
-   /* letter-spacing: .1em; */
-   text-transform: uppercase;
- }
- tr th{
-     background-color: #E3FEFF;
- }
- tr:nth-child(even){
-     background-color: #E3FEFF;
- }
- 
- @media screen and (max-width: 600px) {
-   table {
-     border: 0;
-   }
- 
-   table caption {
-     font-size: 1.3em;
-   }
-   
-   table thead {
-     border: none;
-     clip: rect(0 0 0 0);
-     height: 1px;
-     margin: -1px;
-     overflow: hidden;
-     padding: 0;
-     position: absolute;
-     width: 1px;
-   }
-   
-   table tr {
-     border-bottom: 3px solid #ddd;
-     display: block;
-     margin-bottom: .625em;
-   }
-   
-   table td {
-     border-bottom: 1px solid #ddd;
-     display: block;
-     font-size: .8em;
-     text-align: right;
-   }
-   
-   table td::before {
-     /*
-     * aria-label has no advantage, it won't be read inside a table
-     content: attr(aria-label);
-     */
-     content: attr(data-label);
-     float: left;
-     font-weight: bold;
-     text-transform: uppercase;
-   }
-   
-   table td:last-child {
-     border-bottom: 0;
-   }
- }
 
 @media (max-width: 768px) {
    .insect img {
@@ -721,7 +641,9 @@ table {
 
    .hero-blog {
       line-height: 1;
+      margin-top: 4rem;
       width: 100%;
+      margin: 0 auto;
    }
 
    .hero-blog .hero-left {
@@ -734,7 +656,6 @@ table {
    }
 
    /* featured */
-   .container-Featured .blog,
    .container {
       display: block;
       width: 100%;

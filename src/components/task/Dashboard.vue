@@ -4,7 +4,7 @@
 
     <!-- sidebar -->
     <aside id="mySidebar" v-bind:class="[isActive ? 'block' : 'none']">
-      <div class="sidebar">
+      <div class="sidebar animate__animated animate__fadeInLeft">
         <div class="bar-close flex">
           <!-- LOGO -->
           <router-link to="/">
@@ -38,11 +38,6 @@
             <span class="material-symbols-outlined fav"> favorite </span>
             <p>Likes</p>
           </router-link> -->
-
-          <router-link to="/Dashboard/Pages" class="button">
-            <span class="material-symbols-outlined"> article </span>
-            <p>Pages</p>
-          </router-link>
           <router-link to="/Dashboard/User" class="button">
             <span class="material-symbols-outlined"> account_circle </span>
             <p>Users</p>
@@ -50,6 +45,10 @@
           <router-link to="/Dashboard/addStorie" class="button">
             <span class="material-symbols-outlined"> edit_document </span>
             <p>Add Story</p>
+          </router-link>
+          <router-link to="/Dashboard/Pages" class="button">
+            <span class="material-symbols-outlined"> article </span>
+            <p>Pages</p>
           </router-link>
           <router-link to="/Dashboard/Setting" class="button">
             <span class="material-symbols-outlined"> settings </span>
@@ -72,7 +71,7 @@
           <span class="material-symbols-outlined" @click="w3_open()">
             menu
           </span>
-          <h1>Hi SAURELLE WHAT'S UP</h1>
+          <h1>Hi SAURELLE, Welcom</h1>
         </div>
         <div class="head">
           <div class="head-left">
@@ -216,12 +215,14 @@ export default {
 
 <style scoped>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
+
 h1 {
   text-align: center;
   font-weight: bold;
   font-size: 2em;
   width: 100%;
 }
+
 #container {
   width: 100%;
   display: flex;
@@ -234,12 +235,12 @@ h1 {
 /* top headeer */
 .top-header {
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: space-between;
   height: 60px;
   background-color: #fff;
   align-items: center;
-  padding: 0.6rem 0.7rem;
+  padding: 1rem 1rem;
   top: 0;
   position: fixed;
   margin-bottom: 2rem;
@@ -294,6 +295,7 @@ aside {
   width: 15%;
   display: block;
   position: relative;
+
 }
 
 aside .menu-aside {
@@ -340,8 +342,8 @@ aside .menu-aside-footer .button span {
   padding: 2px 0;
   margin: 2px auto;
   /* background: none; */
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 2px;
+  /* font-weight: bold; */
 
 }
 
@@ -388,18 +390,19 @@ section .row .col-1 .all-content {
   /* margin-top: 2rem; */
   width: 100%;
   margin: 0 auto;
-  
+
 }
 
 section .row {
   display: flex;
-  margin-top: 5rem;
+  margin-top: 3rem;
   padding: 20px 20px 0;
+  justify-content: space-between;
 }
 
 /* col rigth */
 section .row .col-2 {
-  width: 30%;
+  width: 28%;
 }
 
 /* .recent-post */
@@ -408,14 +411,12 @@ section .row .col-2 {
 .social-media,
 .recent-post .card,
 .recent-post {
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 20px;
+  width: 100%;
+  /* margin: 0 auto; */
+  margin-top: 10px;
   padding: 5px;
   background: #fff;
-  border-radius: 10px;
-
-
+  border-radius: 5px;
 }
 
 .recent-post .card .post-comment a {
@@ -609,13 +610,15 @@ section .row .col-2 {
 
   aside .bar-close {
     align-items: center;
-    width: 90%;
+    /* width: 90%; */
     justify-content: space-between;
     margin: 0 auto;
+    padding: 10px;
   }
 
   aside {
     position: absolute;
+
   }
 
   aside .w3-bar-item {

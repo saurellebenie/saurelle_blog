@@ -1,275 +1,169 @@
 <template>
-    
-    <div class="overlay">
-        <!-- LOGN IN FORM by Omar Dsoky -->
-        <form>
-            <!--   con = Container  for items in the form-->
-            <div class="con">
-                <!--     Start  header Content  -->
-                <header class="head-form">
-                    <h2>Log In</h2>
-                    <!--     A welcome message or an explanation of the login form -->
-                    <p>login here using your username and password</p>
-                </header>
-                <!--     End  header Content  -->
-                <br>
-                <div class="field-set">
+    <div id="main">
+        <div class="left">
+            <div class="logo"> GoBlog+</div>
+            <img src="../../assets/Web-Development.png" alt="">
 
-                    <div class="input_form">
-                        <!--   user name -->
-                        <!--   user name Input-->
-                        <input class="form-input" id="txt-input" type="text" placeholder="@UserName" required>
-                    </div>
+        </div>
 
-                    <!--   Password -->
-                    <div class="input_form">
+        <div class="main">
+            
+            <input type="checkbox" id="chk" aria-hidden="true">
 
-                        <!--   Password Input-->
-                        <input class="form-input" type="password" placeholder="Password" id="pwd" name="password"
-                            required>
-
-                        <!--      Show/hide password  -->
-                        <span>
-                            <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
-                        </span>
-                    </div>
-
-                    <!--        buttons -->
-                    <!--      button LogIn -->
-                    <button @click="HandleLogin()" class="log-in"> Log In </button>
-                    <p>OR</p>
-                </div>
-
-                <!--   other buttons -->
-                <div class="other">
-                    <!--      Forgot Password button-->
-                    <button class="btn submits frgt-pass">Forgot Password</button>
-                    <!--     Sign Up button -->
-                    <button class="btn submits sign-up" @click="HandleSignup()">Sign Up
-                        <!--         Sign Up font icon -->
-                        <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    </button>
-                    <!--      End Other the Division -->
-                </div>
-
-                <!--   End Conrainer  -->
+            <div class="signup">
+                <form>
+                    <label for="chk" aria-hidden="true">Sign up</label>
+                    <input type="text" name="txt" placeholder="User name" required="">
+                    <input type="email" name="email" placeholder="Email" required="">
+                    <input type="password" name="pswd" placeholder="Password" required="">
+                    <button>Sign up</button>
+                </form>
             </div>
 
-            <!-- End Form -->
-        </form>
+            <div class="login">
+                <form>
+                    <label for="chk" aria-hidden="true">Login</label>
+                    <input type="email" name="email" placeholder="Email" required="">
+                    <input type="password" name="pswd" placeholder="Password" required="">
+                    <button>Login</button>
+                </form>
+            </div>
+        </div>
     </div>
-
 </template>
 
 <script>
 export default {
     setup() {
-        
+
     },
     methods: {
-        HandleSignup(){
+        HandleSignup() {
             this.$router.push('/Signup')
         },
-        HandleLogin(){
+        HandleLogin() {
             this.$router.push('Dashboard')
         }
     },
 }
 </script>
 <style scoped>
-h2 {
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-}
-p{
-    text-align: center;
-}
-form {
-    width: 450px;
-    min-height: 500px;
-    height: auto;
-    border-radius: 5px;
-    margin: 2% auto;
-    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
-    padding: 2%;
-    background-color: #fff;
-}
-
-/* form Container */
-form .con {
-    display: -webkit-flex;
+#main {
+    margin: 0;
+    padding: 0;
     display: flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-
-/* the header form form */
-header {
-    margin: 2% auto 10% auto;
-    text-align: center;
-}
-
-/* Login title form form */
-header h2 {
-    font-size: 250%;
-    font-family: 'Playfair Display', serif;
-    color: #3e403f;
-}
-
-/*  A welcome message or an explanation of the login form */
-header p {
-    letter-spacing: 0.05em;
-}
-
-
-
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
-.field-set {
+    justify-content: space-between;
     align-items: center;
-}
-
-.input_form {
-    display: flex;
-    padding-bottom: 5px;
-    width: 280px;
-    align-items: center;
-}
-
-.input-item {
-    background-color: #eee;
-    color: #333;
-    padding: 15px 9px 19px 0px;
-    border-radius: 5px 0px 0px 5px;
-
-}
-
-
-
-/* Show/hide password Font Icon */
-#eye {
-    background-color: #eee;
-    color: #333;
-
-    margin: 5.9px 0 0 0;
-    margin-left: -20px;
-    padding: 15px 9px 19px 0px;
-    border-radius: 0px 5px 5px 0px;
-
-    float: right;
-    position: relative;
-    right: 1%;
-    top: -.2%;
-    z-index: 5;
-
-    cursor: pointer;
-}
-
-/* inputs form  */
-input[class="form-input"] {
-    width: 280px;
-    height: 50px;
-    background-color: #eee;
-    margin-top: 2%;
-    padding: 15px;
-
-    font-size: 16px;
-    font-family: 'Abel', sans-serif;
-    color: #5E6472;
-
-    outline: none;
-    border: none;
-
-    border-radius: 0px 5px 5px 0px;
-
-
-}
-
-input[id="txt-input"] {
-    width: 280px;
-    background-color: #eee;
-}
-
-/* focus  */
-input:focus {
-    transform: translateX(-1px);
-    border-radius: 5px;
-}
-
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
-
-/* input[type="text"] {min-width: 250px;} */
-/* buttons  */
-button {
-    display: inline-block;
-    color: #252537;
-
-    width: 280px;
-    height: 50px;
-
-    padding: 0 20px;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
     background: #fff;
-    border-radius: 5px;
+    padding: 2em;
+}
+.left{
+    text-align: center;
+    color: teal;
+    /* line-height: 2px; */
+    /* box-shadow: 5px 20px 50px #000; */
+    height: 500px;
+    /* display: flex; */
+}
+.left img{
+   margin: 0 auto;
+   opacity: 0.5;
+   
+  
+}
+.main {
+    width: 350px;
+    height: 500px;
+    background: red;
+    overflow: hidden;
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    /* margin: 0 auto; */
+    text-align: center;
+}
 
+#chk {
+    display: none;
+}
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    color: #333;
+    font-size: 1.5em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 60%;
+    height: 20px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #333;
+    background: teal;
+    font-size: 0.5em;
+    font-weight: bold;
+    margin-top: 20px;
     outline: none;
     border: none;
-
+    border-radius: 5px;
+    transition: .2s ease-in;
     cursor: pointer;
-    text-align: center;
-    transition: all 0.2s linear;
-
-    margin: 7% auto;
-    letter-spacing: 0.05em;
 }
 
-.log-in {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-/* Submits */
-.submits {
-    width: 48%;
-    display: inline-block;
-
-    margin-left: 2%;
-}
-
-/*       Forgot Password button FAF3DD  */
-.frgt-pass {
-    background: transparent;
-}
-
-/*     Sign Up button  */
-.sign-up {
-    background-color: #FF4B2B;
-    color: #fff;
-}
-
-
-/* buttons hover */
 button:hover {
-    transform: translatey(3px);
-    box-shadow: none;
+    background: teal;
 }
 
-/* buttons hover Animation */
-button:hover {
-    animation: ani9 0.4s ease-in-out infinite alternate;
+.login {
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
 }
 
-@keyframes ani9 {
-    0% {
-        transform: translateY(3px);
-    }
+.login label {
+    color: teal;
+    transform: scale(.6);
+}
 
-    100% {
-        transform: translateY(5px);
-    }
+#chk:checked~.login {
+    transform: translateY(-500px);
+}
+
+#chk:checked~.login label {
+    transform: scale(1);
+}
+
+#chk:checked~.signup label {
+    transform: scale(.6);
 }
 </style>
    

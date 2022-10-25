@@ -1,29 +1,69 @@
 <template>
-    <h1>Users</h1>
-    <table>
-        <thead>
-            <tr>
-                <!-- <th>ID</th> -->
-                <th scope="col">Username</th>
-                <th scope="col">Email</th>
+    <!-- <section class="antialiased text-gray-600 h-full mt-5"> -->
+        <div class="flex flex-col justify-center h-full mt-3">
+            <!-- Table -->
+            <div class="w-full  mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+                <header class="px-5 py-4 border-b border-gray-100">
+                    <h2 class="font-semibold text-gray-800 text-3xl	">Users</h2>
+                </header>
+                <div class="">
+                    <div class="overflow-x-auto">
+                        <table class="table-auto w-full">
+                            <thead class="text-xm font-semibold text-gray-400 bg-gray-100">
+                                <tr>
 
-                <th scope="col">CreatedAt</th>
-                <th scope="col">IsLoggedIn</th>
-                <th scope="col">#Post</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="(User,i) in Users" :key="i">
-                <!-- <td>{{ User.id}}</td> -->
-                <td data-label="Username">{{ User.username }}</td>
-                <td data-label="Email"><a href="#">{{User.email}}</a></td>
-                <td data-label="CreateAt">{{ User.createdAt }}</td>
-                <td data-label="IsLoggedIn">{{ User.isLoggedIn }}</td>
-                <td data-label="#Post">{{User.NoPost}}</td>
+                                    <!-- <th>ID</th> -->
+                                    <th class="p-3 whitespace-nowrap" scope="col">
+                                        <div class="font-semibold text-left">UserName</div>
+                                    </th>
+                                    <th class="p-3 whitespace-nowrap" scope="col">
+                                        <div class="font-semibold text-left">Email</div>
+                                    </th>
+                                    <th class="p-3 whitespace-nowrap" scope="col">
+                                        <div class="font-semibold text-left">CreatedAt</div>
+                                    </th>
+                                    <th class="p-3 whitespace-nowrap" scope="col">
+                                        <div class="font-semibold text-center">IsLoggedIn</div>
+                                    </th>
+                                    <th class="p-3 whitespace-nowrap" scope="col">
+                                        <div class="font-semibold text-center">#Post</div>
+                                    </th>
 
-            </tr>
-        </tbody>
-    </table>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm divide-y divide-gray-100">
+                                <tr v-for="(User, i) in Users" :key="i">
+                                    <!-- <td>{{ User.id}}</td> -->
+                                    <td class="p-3 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full"
+                                                    src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-09.jpg"
+                                                    width="40" height="40" alt="Burak Long">
+                                            </div>
+                                            <div class="font-medium text-gray-800">{{ User.username}}</div>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 whitespace-nowrap">
+                                        <div class="text-left text-gray-800">{{ User.email }}</div>
+                                    </td>
+                                    <td class="p-3 whitespace-nowrap">
+                                        <div class=" text-left text-gray-800">{{ User.createdAt }}</div>
+                                    </td>
+                                    <td class="p-3 whitespace-nowrap">
+                                        <div class="font-medium text-center text-gray-800">{{ User.isLoggedIn }}</div>
+                                    </td>
+                                    <td class="p-3 whitespace-nowrap">
+                                        <div class="font-medium text-center text-gray-800">{{ User.NoPost }}</div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </section> -->
 </template>
 
 <script>
@@ -72,9 +112,9 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 2em;
-  width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    width: 100%;
 }
 </style>
