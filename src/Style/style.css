@@ -161,6 +161,7 @@ h1 {
    /* margin-left: 1rem; */
    /* display: var(--display-flex); */
    align-items: center;
+   color: teal;
 }
 
 .logo span {
@@ -222,7 +223,7 @@ NAVBAR STYLING STARTS
 .menu {
    display: var(--display-flex);
    /* gap: 1em; */
-   font-size: 14px;
+   font-size: 16px;
    align-items: center;
    justify-content: space-between;
 }
@@ -248,7 +249,7 @@ NAVBAR STYLING STARTS
    width: 0;
    height: 2px;
    position: absolute;
-   background: var(--red-color);
+   background:turquoise;
    left: 50%;
    transform: translateX(-50%);
    top: 30px;
@@ -330,7 +331,7 @@ input[type=checkbox],
 
 
 .hero-btn {
-   background: #333;
+   background: rgb(145, 95, 2);
    padding: 10px;
    margin: 0 auto;
 }
@@ -476,7 +477,7 @@ span {
 .wrap {
    display: flex;
    flex-wrap: wrap;
-   width: 80%;
+   width: 100%;
    box-shadow: var(--line-border);
    margin-top: 4rem;
 }

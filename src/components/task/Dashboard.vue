@@ -71,7 +71,7 @@
           <span class="material-symbols-outlined" @click="w3_open()">
             menu
           </span>
-          <h1>Hi SAURELLE, Welcom</h1>
+          <h1>Hi SAURELLE</h1>
         </div>
         <div class="head">
           <div class="head-left">
@@ -159,6 +159,17 @@
               <span>90k</span>
             </div>
           </div>
+
+          <!-- footer -->
+          <!-- footer in right  -->
+          <div class="wrap">
+              <span> <a href="#">Help</a></span>
+              <span> <a href="#">Status</a></span>
+              <span> <a href="#">About</a></span>
+              <span> <a href="#">Blog</a></span>
+              <span> <a href="#">Carreers</a></span>
+              <span> <a href="#">Privacy</a></span>
+            </div>
         </div>
       </div>
     </section>
@@ -244,6 +255,7 @@ h1 {
   top: 0;
   position: fixed;
   margin-bottom: 2rem;
+  z-index: 90;
 }
 
 .top-header .welcon-text h1 {

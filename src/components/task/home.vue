@@ -257,7 +257,7 @@
             <div class="topics animate__animated animate__flipInY">
 
               <h2 class="mb-4 text-2xl lg:text-2xl tracking-tight font-extrabold text-gray-900 :text-white">
-                Featured</h2>
+                Topics</h2>
 
               <a href="#" class="topic-btn">
                 <span class="material-symbols-outlined">
