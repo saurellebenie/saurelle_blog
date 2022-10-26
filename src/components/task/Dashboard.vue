@@ -22,15 +22,15 @@
             <span class="material-symbols-outlined"> widgets </span>
             <p>Dashboard</p>
           </router-link>
-          <router-link to="/Dashboard/Report" class="button">
+          <router-link to="/Dashboard/Report" class="button" @click="w3_close()">
             <span class="material-symbols-outlined"> monitoring </span>
             <p> Annual report</p>
           </router-link>
-          <router-link to="/Dashboard/Posts" class="button">
+          <router-link to="/Dashboard/Posts" class="button" @click="w3_close()">
             <span class="material-symbols-outlined"> report </span>
             <p>Posts</p>
           </router-link>
-          <router-link to="/Dashboard/Comments" class="button">
+          <router-link to="/Dashboard/Comments" class="button" @click="w3_close()">
             <span class="material-symbols-outlined com"> chat </span>
             <p>Comments</p>
           </router-link>
@@ -39,15 +39,15 @@
             <p>Likes</p>
           </router-link> -->
           
-          <router-link to="/Dashboard/addStorie" class="button">
+          <router-link to="/Dashboard/addStorie" class="button" @click="w3_close()">
             <span class="material-symbols-outlined"> edit_document </span>
             <p>Add Story</p>
           </router-link>
-          <router-link to="/Dashboard/User" class="button">
+          <router-link to="/Dashboard/User" class="button" @click="w3_close()">
             <span class="material-symbols-outlined"> account_circle </span>
             <p>Users</p>
           </router-link>
-          <router-link to="/Dashboard/Setting" class="button">
+          <router-link to="/Dashboard/Setting" class="button" @click="w3_close()">
             <span class="material-symbols-outlined"> settings </span>
             <p>Settings</p>
           </router-link>
