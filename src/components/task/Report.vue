@@ -1,8 +1,8 @@
 <template>
-    <h1>DoughnutChart </h1>
+    <h1 class="mb-4 text-3xl lg:text-4xl font-bold text-gray-900 :text-white text-center">DoughnutChart </h1>
     <DoughnutChart />
     
-    <h1>CustomChart </h1>
+    <h1 class="mb-4 text-3xl lg:text-4xl font-bold text-gray-900 :text-white text-center">CustomChart </h1>
     <CustomChart />
 </template>
 <script>
