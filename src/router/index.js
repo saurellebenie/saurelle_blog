@@ -4,7 +4,7 @@ import Signup from '../components/auth/Signup.vue'
 import Dashboard from '../components/task/Dashboard.vue'
 import addStorie from '../components/task/addStorie.vue'
 import Storie from '../components/task/Storie.vue'
-import Profile from '../components/task/Profile.vue'
+import ProfileIcon from '../components/task/ProfileIcon.vue'
 import Login from '../components/auth/Login.vue'
 import Pages from '../components/task/Pages.vue'
 import Posts from '../components/task/Posts.vue'
@@ -13,7 +13,7 @@ import Setting from '../components/task/Setting.vue'
 import User from '../components/task/User.vue'
 import Lastpost from '../components/task/Lastpost.vue'
 import Comments from '../components/task/Comments.vue'
-// import BarChart from '../components/Chart/BarChart.js'
+import Profile from '../components/auth/Profile.vue'
 import PostLayout from '../components/task/PostLayout.vue'
 
 const router = createRouter({
@@ -35,20 +35,20 @@ const router = createRouter({
       component: Signup
     },
     {
-      path: '/Profile',
-      name: 'Profile',
-      component: Profile
+      path: '/ProfileIcon',
+      name: 'ProfileIcon',
+      component: ProfileIcon
     },
     {
       path: '/Lastpost',
       name: 'Lastpost',
       component: Lastpost
     },
-    // {
-    //   path: '/BarChart',
-    //   name: 'BarChart',
-    //   component: BarChart
-    // },
+    {
+      path: '/Profile',
+      name: 'Profile',
+      component: Profile
+    },
     {
       path: '/PostLayout',
       name: '',

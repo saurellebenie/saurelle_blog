@@ -35,7 +35,7 @@
     <div class="container-blog">
 
         <div class="cartbar">
-            <h1>Visitors</h1>
+            <h1>#Visitors/Months</h1>
             <Bar :chart-options="chartOptions" :chart-data="chartData" :chart-id="chartId"
                 :dataset-id-key="datasetIdKey" :plugins="plugins" :css-classes="cssClasses" :styles="styles"
                 :width="800" :height="height" />

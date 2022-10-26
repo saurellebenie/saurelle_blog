@@ -4,7 +4,7 @@
             <!-- Table -->
             <div class="w-full  mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
                 <header class="px-5 py-4 border-b border-gray-100">
-                    <h2 class="font-semibold text-gray-800 text-3xl	">Users</h2>
+                    <h2 class="font-semibold text-gray-800 text-3xl	text-center">#Users</h2>
                 </header>
                 <div class="">
                     <div class="overflow-x-auto">

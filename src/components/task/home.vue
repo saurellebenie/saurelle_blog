@@ -33,7 +33,7 @@
 
   <!-- featured -->
   <div class="container-Featured">
-    <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 :text-white text-center">
+    <h2 class="mb-4 text-3xl lg:text-4xl font-extrabold text-gray-900 :text-white text-center">
       Featured</h2>
     <div class="blog flex-wrap">
 

@@ -16,7 +16,7 @@
                     <input type="text" name="txt" placeholder="User name" required="">
                     <input type="email" name="email" placeholder="Email" required="">
                     <input type="password" name="pswd" placeholder="Password" required="">
-                    <button>Sign up</button>
+                    <button @click="HandleSignup()">Sign up</button>
                 </form>
             </div>
 
@@ -25,7 +25,7 @@
                     <label for="chk" aria-hidden="true">Login</label>
                     <input type="email" name="email" placeholder="Email" required="">
                     <input type="password" name="pswd" placeholder="Password" required="">
-                    <button>Login</button>
+                    <button @click="HandleLogin()">Login</button>
                 </form>
             </div>
         </div>
@@ -39,7 +39,7 @@ export default {
     },
     methods: {
         HandleSignup() {
-            this.$router.push('/Signup')
+            this.$router.push('/Dashboard')
         },
         HandleLogin() {
             this.$router.push('Dashboard')

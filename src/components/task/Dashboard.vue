@@ -38,17 +38,14 @@
             <span class="material-symbols-outlined fav"> favorite </span>
             <p>Likes</p>
           </router-link> -->
-          <router-link to="/Dashboard/User" class="button">
-            <span class="material-symbols-outlined"> account_circle </span>
-            <p>Users</p>
-          </router-link>
+          
           <router-link to="/Dashboard/addStorie" class="button">
             <span class="material-symbols-outlined"> edit_document </span>
             <p>Add Story</p>
           </router-link>
-          <router-link to="/Dashboard/Pages" class="button">
-            <span class="material-symbols-outlined"> article </span>
-            <p>Pages</p>
+          <router-link to="/Dashboard/User" class="button">
+            <span class="material-symbols-outlined"> account_circle </span>
+            <p>Users</p>
           </router-link>
           <router-link to="/Dashboard/Setting" class="button">
             <span class="material-symbols-outlined"> settings </span>
@@ -84,7 +81,7 @@
           </div>
           <div class="head-right flex">
 
-            <profile />
+            <ProfileIcon />
           </div>
         </div>
       </div>
@@ -180,7 +177,8 @@
 <script>
 // import Storie from './Storie.vue'
 import { ref } from "vue";
-import Profile from "./Profile.vue";
+
+import ProfileIcon from "./ProfileIcon.vue";
 export default {
   //   components: { Storie },
   setup() {
@@ -220,7 +218,7 @@ export default {
   mounted() {
     this.username = localStorage.getItem("username");
   },
-  components: { Profile },
+  components: { ProfileIcon},
 };
 </script>
 

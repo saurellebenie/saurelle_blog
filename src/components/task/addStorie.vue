@@ -185,7 +185,7 @@ select,
 label {
     color: teal;
     font-weight: bold;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
 }
 
 .submit-button:hover {
@@ -218,12 +218,12 @@ label {
 	border: none;
 	width:100%;
 	max-width:none !important;
-	-webkit-appearance: none;
+	/* -webkit-appearance: none; */
     outline: none;
 }
 .dropdown select option{
     background-color: #EFEFEF;
     font-weight: 600;
-    
+    padding: 10px;
 }
 </style>
