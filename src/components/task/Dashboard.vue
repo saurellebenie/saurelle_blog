@@ -68,7 +68,7 @@
           <span class="material-symbols-outlined" @click="w3_open()">
             menu
           </span>
-          <h1>Hi SAURELLE</h1>
+          <h1>Hi {{username}}</h1>
         </div>
         <div class="head">
           <div class="head-left">
@@ -196,7 +196,7 @@ export default {
         backgroundColor: "#333",
       },
       date: new Date().toLocaleString(),
-      username: "",
+      username: JSON.parse(window.localStorage.getItem("login")).username,
       isActive: true,
     };
   },
@@ -206,7 +206,7 @@ export default {
     //         is_expanded.value = !is_expanded.value
     //         localStorage.setItem("is_expanded", is_expanded.value)
     //     }
-    // this.username = localStorage.getItem("username", username);
+    // this.username = localStorage.getItem("username": username);
     sliderIndicator() { },
     w3_open() {
       this.isActive = true;
@@ -215,9 +215,9 @@ export default {
       this.isActive = !this.isActive;
     },
   },
-  mounted() {
-    this.username = localStorage.getItem("username");
-  },
+  // mounted() {
+  //   this.username = localStorage.getItem("username": this.username);
+  // },
   components: { ProfileIcon},
 };
 </script>
@@ -246,7 +246,7 @@ h1 {
   display: flex;
   width: 90%;
   justify-content: space-between;
-  height: 60px;
+  height: 62px;
   background-color: #fff;
   align-items: center;
   padding: 1rem 1rem;
@@ -269,7 +269,8 @@ h1 {
 
 .top-header .head {
   display: flex;
-  padding: 5px;
+ height: 60px;
+ padding: 14px;
   background: #fff;
   border-radius: 10px;
   margin-right: 10px;

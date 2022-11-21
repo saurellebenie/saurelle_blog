@@ -32,7 +32,7 @@
                                 </tr>
                             </thead>
                             <tbody class="text-sm divide-y divide-gray-100">
-                                <tr v-for="(User, i) in Users" :key="i">
+                                <tr v-for="User in Users" :key="User.id">
                                     <!-- <td>{{ User.id}}</td> -->
                                     <td class="p-3 whitespace-nowrap">
                                         <div class="flex items-center">
@@ -47,10 +47,10 @@
                                         <div class="text-left text-gray-800">{{ User.email }}</div>
                                     </td>
                                     <td class="p-3 whitespace-nowrap">
-                                        <div class=" text-left text-gray-800">{{ User.createdAt }}</div>
+                                        <div class=" text-left text-gray-800">{{ User.age }}</div>
                                     </td>
                                     <td class="p-3 whitespace-nowrap">
-                                        <div class="font-medium text-center text-gray-800">{{ User.isLoggedIn }}</div>
+                                        <div class="font-medium text-center text-gray-800">{{ User.gender }}</div>
                                     </td>
                                     <td class="p-3 whitespace-nowrap">
                                         <div class="font-medium text-center text-gray-800">{{ User.NoPost }}</div>
@@ -67,45 +67,33 @@
 </template>
 
 <script>
+import TutorialDataService from '../../Service/helpers.js'
 export default {
     setup() {
 
     },
     data() {
         return {
-            Users: [
-
-                {
-                    id: 1,
-                    username: "Kambang",
-                    email: "kambang@mail.com",
-                    password: 'heroTester',
-                    isLoggedIn: true,
-                    createdAt: new Date().toLocaleDateString(),
-                    NoPost: 3
-                },
-                {
-                    id: 2,
-                    username: "John Doe",
-                    email: "JohnDoe@email.com",
-                    password: 'heroTest',
-                    isLoggedIn: true,
-                    createdAt: new Date().toLocaleDateString(),
-                    NoPost: 5
-                },
-                {
-                    id: 3,
-                    username: "Saurelle",
-                    email: "saurelle@email.com",
-                    password: 'atlhdj12',
-                    isLoggedIn: false,
-                    createdAt: new Date().toLocaleDateString(),
-                    NoPost: 8
-                },
-
-
-            ]
+            Users: []
         }
+    },
+    methods:{
+        getAllUsers(){
+            TutorialDataService.getUsers()
+            .then(response =>{
+                this.Users = response.data;
+                console.log(response.data);
+            })
+            .catch(err =>{
+                console.log(err);
+            })
+        },
+        refreshList() {
+            this.getUsers();
+        },
+    },
+    mounted(){
+       this.getAllUsers();
     }
 }
 </script>

@@ -1,140 +1,235 @@
 <template>
-    <section class="post">
-        <h3 class="description">- Long form typography exercise - </h3>
-        <h1>Hipster Ipsum</h1>
-        <p>Dreamcatcher nesciunt pour-over, VHS Schlitz et hella occaecat Wes Anderson put a bird on it quinoa voluptate
-            occupy jean shorts. Yr vegan readymade mlkshk, pour-over cornhole fap tempor Wes Anderson direct trade.
-            Banjo bicycle rights Godard fingerstache, occupy deep v mollit tote bag raw denim ugh banh mi trust fund
-            nisi Williamsburg.</p>
-        <p>Fingerstache forage semiotics messenger bag. Retro whatever cardigan stumptown, PBR banh mi mollit. Assumenda
-            mumblecore placeat readymade enim irure. Bushwick ullamco gastropub pickled gluten-free, retro post-ironic
-            kogi tousled shabby chic photo booth deep v jean shorts fap tattooed. Banksy cray Etsy voluptate, sunt
-            pickled DIY irony. American apparel ethnic duis, thundercats locavore 8-bit trust fund shabby chic
-            single-origin coffee freegan asymmetrical Truffaut Cosby sweater vinyl ut.
-        </p>
+    <div>
+        <form action="">
+            <div class="add-story">
+                <label for="">Write a title</label>
+                <input type="text" name="" id="" v-model="Post.title" placeholder="Title">
 
-        <h2>Title Header 2</h2>
-        <p> Literally trust fund yolo, messenger bag kale chips photo booth cray et delectus deep v biodiesel leggings
-            cillum shoreditch meh. Meh trust fund four loko, Brooklyn twee post-ironic tousled Vice magna.</p>
-        <blockquote>"The best things in life aren't things."</blockquote>
+                <label for="">Write Description to your post</label>
+                <input type="text" v-model="Post.desc">
+                <label>write content here</label>
+                <editor api-key="9tfwhrotb6bnkqepmnm8p3knll8vt2d0tychhq7atetnbao2" :init="{
+                    selector: 'textarea',
+                    // height: 500,
+                    plugins: [
+                        'advlist autolink lists link image charmap print preview anchor',
+                        'searchreplace visualblocks code fullscreen',
+                        'insertdatetime media table paste code help wordcount'
+                    ],
+                    toolbar:
+                        'undo redo | formatselect | bold italic backcolor | \
+                                                                                                                                                                                                                                                                        alignleft aligncenter alignright alignjustify | \
+                                                                                                                                                                                                                                                                        bullist numlist outdent indent | removeformat | help'
+                }" v-model="Post.content" />
 
-        <p>Hashtag banjo helvetica chambray, occupy you probably haven't heard of them kogi banh mi Carles.
-            Intelligentsia Cosby sweater try-hard ullamco, Austin tote bag aliqu.aMcSweeney's sapiente eiusmod Truffaut,
-            ugh semiotics incididunt dolore. Pop-up Marfa cred Brooklyn. Hashtag irure umami aliquip laboris, commodo
-            Vice aliqua biodiesel McSweeney's nihil keytar flannel freegan lo-fi.</p>
 
-        <figure>
-            <img src="https://unsplash.s3.amazonaws.com/batch%206/lighthouse.jpg" alt="Light house"
-                class="pic-medium" />
-        </figure>
+                <!-- <div class="not"> {{Post.published ? "Publishes":"Pending" }} </div> -->
 
-        <p>Hoodie semiotics tousled brunch, eu 3 wolf moon sartorial flannel Wes Anderson 8-bit organic ugh gastropub.
-            Kale chips sunt DIY, Terry Richardson commodo id culpa Portland leggings. Culpa assumenda jean shorts, ugh
-            readymade lo-fi laborum minim forage sunt 3 wolf moon kale chips aliqua et bicycle rights. Selvage accusamus
-            meggings McSweeney's twee cliche gastropub, nisi anim. Sunt in post-ironic mustache sapiente blog
-            church-key, Etsy hoodie fanny pack occaecat selfies Austin id quinoa.</p>
 
-        <figure>
-            <img src="https://unsplash.s3.amazonaws.com/batch%205/pier.JPG" alt="Pier 2 exports" class="pic-medium" />
-        </figure>
+            </div>
 
-        <p>Bitters Tonx mixtape hella four loko. Tofu meggings McSweeney's scenester kitsch, brunch four loko Austin
-            dreamcatcher High Life readymade tote bag single-origin coffee. Synth shabby chic High Life butcher iPhone
-            cray. Small batch Tonx tumblr, Austin readymade Terry Richardson dreamcatcher Banksy blue bottle hoodie food
-            truck kogi Bushwick Odd Future. Church-key chillwave Banksy butcher cardigan.</p>
 
-        <h3 class="thanks">Thanks for viewing!</h3>
 
-    </section>
+
+        </form>
+
+        <button class="delete-button" @click="deletePost()" type="button">Delete</button>
+        <button class="submit-button" @click="updatePost()" type="button">Update</button>
+
+
+    </div>
 </template>
 
-<style scoped>
-/* HEADER & COPY SIZING */
-p {
-    font-size: 1em;
-    /* 16px */
-    font-family: 'Open Sans', sans-serif;
+<script>
+
+import TutorialDataService from '../../Service/helpers.js'
+
+import Editor from '@tinymce/tinymce-vue';
+export default {
+    data() {
+        return {
+            Post: []
+        }
+    },
+    components: {
+        'editor': Editor
+    },
+
+    methods: {
+        getPost(id) {
+            TutorialDataService.getPostById(id)
+                .then(response => {
+                    this.Post = response.data;
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        },
+        updatePost() {
+            TutorialDataService.updatePost(this.Post.id, this.Post)
+                .then(response => {
+                    console.log(response.data);
+                    this.message = 'Posts upsated'
+                    this.$router.push("/Dashboard/Posts")
+                })
+                .catch(e => console.log(e))
+        },
+
+        deletePost() {
+            TutorialDataService.deletePost(this.Post.id)
+                .then(response => {
+                    console.log(response.data);
+                    this.$router.push("/Dashboard/Posts")
+                })
+                .catch(e => { console.log(e); })
+        },
+        // },
+    },
+    mounted() {
+
+
+        this.getPost(this.$route.params.id);
+
+    }
+
 }
+</script>
+<style scoped>
+form {
+    margin-bottom: 5rem;
+    /* position: relative; */
+    background-color: #EFEFEF;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+form .add-story {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+form .add-story input,
+form .add-story span {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    padding: 10px;
+    align-items: center;
+    background-color: transparent;
+}
+
+/* select {
+    width: 30%;
+    border: 1px solid rgb(167, 162, 162);
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: inherit;
+} */
 
 h1 {
-    font-size: 3.375em;
-    /* 54px */
-    letter-spacing: -.03em;
-}
-
-h2 {
-    font-size: 2.25em;
-    /* 36px */
-}
-
-h3 {
-    font-size: 1.5em;
-    /* 24px */
-    font-style: italic;
-}
-
-
-.post {
-    width: 960px;
-    padding: 5% 12% 10% 10%;
-    background-color: #f4f4f4;
-    margin: 0 auto;
-    border-right: 1px solid #e4e4e4;
-    border-left: 1px solid #e4e4e4;
-}
-
-.description {
     text-align: center;
-    margin-bottom: 70px;
-}
-
-h1,
-h2,
-h3 {
-    margin: 10px 0px;
-    font-family: 'Merriweather', serif;
-    color: #3d4c5c;
-}
-
-p:first-of-type:first-letter {
-    font-size: 4em;
     font-weight: bold;
-    float: left;
-    padding-right: 3px;
+    font-size: 2em;
+    width: 100%;
 }
 
-p:first-of-type:first-line {
-    line-height: 1;
+.not,
+textarea,
+input {
+    margin-bottom: 2rem;
+    outline: none;
 }
 
-.post>p {
-    padding: 10px 0px 10px 40px;
+input[type=text] {
+    border: none;
 }
 
-blockquote {
-    background-color: #eaeaea;
-    font-family: 'Merriweather', serif;
-    font-style: italic;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: 12px 0 12px 40px;
-    text-align: center;
+select,
+::placeholder {
+    color: rgb(65, 54, 6);
+    font-size: 15px;
 }
 
-figure {
-    margin: 20px 0px;
+.delete-button,
+.submit-button {
+    width: 150px;
+    padding: 10px;
+    border: 2px;
+    border-radius: 20px;
+    color: #fff;
+    /* margin: 2rem auto; */
+    position: relative;
+    margin: 0 auto;
 }
 
-figcaption {
-    padding-left: 10px;
+.submit-button {
+    background-color: teal;
 }
 
-.pic-medium {
-    max-width: 120%;
+.delete-button {
+    background-color: tomato;
+    margin-right: 20px;
 }
 
-.thanks {
-    margin-top: 80px;
-    text-align: center;
+.img {
+    width: 50px;
+    height: 50px;
+}
+
+/* .img input{
+    border: none;
+} */
+label {
+    color: teal;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.submit-button:hover {
+    background-color: #fff;
+    /* border: 1px solid tomato; */
+    color: var(--heat-color);
+    cursor: pointer;
+    /* position: relative; */
+
+}
+
+/* select */
+
+/*Layout*/
+/*Dropdown*/
+.dropdown {
+    margin-bottom: 2em;
+    width: 14.5em;
+    border: 0.1em solid #c0cdd1;
+}
+
+.dropdown select {
+    display: inline-block;
+    /* color: #8c8c8c; */
+    /* float:left; */
+    /* font-size:15px; */
+    padding: 10px;
+    z-index: 9999;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    width: 100%;
+    max-width: none !important;
+    /* -webkit-appearance: none; */
+    outline: none;
+}
+
+.dropdown select option {
+    background-color: #EFEFEF;
+    font-weight: 600;
+    padding: 10px;
 }
 </style>

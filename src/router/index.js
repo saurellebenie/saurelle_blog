@@ -14,8 +14,8 @@ import User from '../components/task/User.vue'
 import Lastpost from '../components/task/Lastpost.vue'
 import Comments from '../components/task/Comments.vue'
 import Profile from '../components/auth/Profile.vue'
-import PostLayout from '../components/task/PostLayout.vue'
-
+import viewPost from '../components/task/viewPost.vue'
+import addComment from '../components/task/addComment.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -35,6 +35,10 @@ const router = createRouter({
       component: Signup
     },
     {
+      path: '/addComment',
+      component: addComment
+    },
+    {
       path: '/ProfileIcon',
       name: 'ProfileIcon',
       component: ProfileIcon
@@ -49,11 +53,11 @@ const router = createRouter({
       name: 'Profile',
       component: Profile
     },
-    {
-      path: '/PostLayout',
-      name: '',
-      component: PostLayout
-    },
+    // {
+    //   path: '/PostLayout',
+    //   name: '',
+    //   component: PostLayout
+    // },
     {
       path: '/Dashboard',
       name: 'Dashboard',
@@ -77,13 +81,24 @@ const router = createRouter({
         },
         {
           path: 'Posts',
-          name: 'Post',
+          alias: 'Posts',
+          name: 'Posts',
           component: Posts
+        },
+        {
+          path: 'Posts-detail/:id',
+          name: 'Posts-details',
+          component: () => import("./../components/task/PostLayout.vue")
         },
         {
           path: 'User',
           name: 'User',
           component: User
+        },
+        {
+          path: 'viewPost/:id',
+          name: 'viewPost',
+          component: viewPost
         },
         {
           path: 'Report',
@@ -109,5 +124,15 @@ const router = createRouter({
 
 
 })
+router.beforeEach((to, from, next) => {
+  const loggedIn = JSON.parse(window.localStorage.getItem("login")) || false;
+  if (to.name === "addStorie" && !loggedIn){
+      next({name: "Login"});
+  } else if ((to.name === "Login" || to.name === "signup") && loggedIn) {
+      next({name: "home"})
+  } else {
+      next();
+  }
+});
 
 export default router

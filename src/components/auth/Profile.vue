@@ -1,10 +1,6 @@
 <template>
     <div class="mx-auto max-w-3xl mt-8">
 
-        <!--     @if (session('alert'))
-          <p>{{ session('alert') }}</p>
-    @endif -->
-
         <h1 class="text-2xl font-bold text-gray-700 px-6 md:px-0">Account Settings</h1>
         <ul class="flex border-b border-gray-300 text-sm font-medium text-gray-600 mt-3 px-6 md:px-0">
             <li class="mr-8 text-gray-900 border-b-2 border-gray-800"><a href="#_" class="py-4 inline-block">Profile
@@ -45,8 +41,10 @@
                         <img class="rounded-full w-16 h-16 border-4 mt-2 border-gray-200 float-left" id="photo"
                             src="https://pbs.twimg.com/profile_images/1163965029063913472/ItoFLWys_400x400.jpg"
                             alt="photo">
-                        <div class="bg-gray-200 text-gray-500 text-xs mt-5 ml-3 font-bold px-4 py-2 rounded-lg float-left hover:bg-gray-300 hover:text-gray-600 relative overflow-hidden cursor-pointer">
-                            <input type="file" name="photo" onchange="loadFile(event)" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"> Change Photo
+                        <div
+                            class="bg-gray-200 text-gray-500 text-xs  ml-3 font-bold px-4 py-2 rounded-lg float-left hover:bg-gray-300 hover:text-gray-600 relative overflow-hidden cursor-pointer">
+                            <input type="file" name="photo" onchange="loadFile(event)"
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"> Change Photo
                         </div>
                     </div>
 
@@ -57,7 +55,7 @@
                 <p class="float-left text-xs text-gray-500 tracking-tight mt-2">Click on Save to update your Profile
                     Info</p>
                 <input type="submit"
-                    class="bg-indigo-500 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer"
+                    class="bg-orange-500 text-black text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer"
                     value="Save">
             </div>
         </form>
@@ -68,7 +66,8 @@
 #menu-toggle:checked+#menu {
     display: block;
 }
-.btn{
-   justify-content: space-between;
+
+.btn {
+    justify-content: space-between;
 }
 </style>

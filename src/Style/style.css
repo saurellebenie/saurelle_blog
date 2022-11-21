@@ -415,7 +415,9 @@ span {
    margin-top: 5px;
 }
 
-/* container */
+/* =================================================
+container story
+=========================================== */
 .story {
    margin-top: 5rem;
    width: 90%;
@@ -427,9 +429,9 @@ span {
 }
 
 .left {
-   /* margin-top: 2rem; */
-   width: 60%;
-   position: relative;
+   margin-top: 2rem;
+   width: 70%;
+   /* position: relative; */
 }
 
 .comment_pic {
@@ -460,10 +462,11 @@ span {
 }
 
 .right {
-   width: 30%;
+   width: 28%;
    /* position: absolute; */
    display: flex;
    text-align: center;
+   margin-top: 5rem;
 }
 
 .right h1 {

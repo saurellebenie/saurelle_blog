@@ -1,105 +1,77 @@
 <template>
     <!--  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 -->
-    <form action="">
-        <div class="add-story">
-            <label for="">Write a title</label>
-            <input type="text" name="" id="" v-model="post.title" placeholder="Title">
-            <label></label>
-            <!-- <div class="select-btn">
-                <select name="" id="">
-                    <option value="html">html</option>
-                    <option value="css">c</option>
-                    <option value="javascript">javascript</option>
-                    <option value="Vue">vue js</option>
-                    <option value="React"></option>
-                </select>
-                <div class="hider"></div>
-                <span class="fa fa-sort-desc"></span>
-            </div> -->
-            <label>Topics</label>
-            <div class="dropdown">
-               
-                <select v-model="proxySelected">
-                    
-                    <option :value="i" v-for="i in list">{{ i }}</option>
-                </select>
+    <div>
+        <form novalidate @submit.prevent="submit()">
+            <div class="add-story">
+                <label>Write a title</label>
+                <input type="text" name="title" v-model="title" required placeholder="Title">
+
+                <label>Write Description to your post</label>
+                <input type="text" v-model="desc" required>
+                <label>write content here</label>
+                <editor api-key="9tfwhrotb6bnkqepmnm8p3knll8vt2d0tychhq7atetnbao2" :init="{
+                    selector: 'textarea',
+                    // height: 500,
+                    plugins: [
+                        'advlist autolink lists link image charmap print preview anchor',
+                        'searchreplace visualblocks code fullscreen',
+                        'insertdatetime media table paste code help wordcount'
+                    ],
+                    toolbar:
+                        'undo redo | formatselect | bold italic backcolor | \
+                                        alignleft aligncenter alignright alignjustify | \
+                                        bullist numlist outdent indent | removeformat | help'
+                }" v-model="content" required />
+
+
+                <div class="not"></div>
+                <button class="submit-button"  type="submit">Publish</button>
             </div>
-            <label>Add content (up to 5) so readers know what your story is about</label>
-            <input type="text" name="" id="" v-model="post.description" placeholder="description">
-
-            <label>write content here</label>
-
-
-            <editor api-key="9tfwhrotb6bnkqepmnm8p3knll8vt2d0tychhq7atetnbao2" :init="{
-                selector: 'textarea',
-                // height: 500,
-                plugins: [
-                    'advlist autolink lists link image charmap print preview anchor',
-                    'searchreplace visualblocks code fullscreen',
-                    'insertdatetime media table paste code help wordcount'
-                ],
-                toolbar:
-                    'undo redo | formatselect | bold italic backcolor | \
-                                                                alignleft aligncenter alignright alignjustify | \
-                                                                bullist numlist outdent indent | removeformat | help'
-            }"
-            v-model="post.content" />
-            <div class="not"></div>
-             <button class="submit-button" @click="savePost" type="button">Publish</button>
-        </div>
-
-
-       
-
-    </form>
+        </form>
+    </div>
+    
     <!-- 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 -->
 
 </template>
 <script>
+import axios from 'axios'
 import Editor from '@tinymce/tinymce-vue';
+
+import TutorialDataService from '../../Service/helpers.js'
 export default {
     setup() {
 
     },
     data() {
         return {
-            post: {
                 id: '',
                 title: '',
-                description: '',
+                desc: '',
                 content: '',
-                list: []
-            },
-            selected: 'Html',
-            list: ['Html', 'Css', 'Vue js', 'Javascript', 'Angular', 'React']
-        }
+                author: JSON.parse(window.localStorage.getItem("login")).username
+            }
     },
     components: {
         'editor': Editor
     },
     methods: {
 
+        submit(){
+            console.log({"title": this.title.replace(/\s+/g, '-').toLowerCase(), "desc": this.desc, "content": this.content});
+            this.axios.post("http://localhost:3000/post/add", {"title": this.title.replace(/\s+/g, '-').toLowerCase(), "desc": this.desc, "content": this.content, "author": this.author})
+            .then(res => {
+                console.log(res);
+                if(res.status === 201){
+                    this.$router.push(`/user/${this.author}/${this.title.replace(/\s+/g, '-').toLowerCase()}`);
+                }
 
-        savePost() {
-            console.log(this.post);
-
-            let postId = Math.ceil(Date.now());
-            console.log("post id:", postId);
-            this.$router.push('/PostLayout')
+            })
+            .catch(err =>{
+                console.log(err);
+            })
         }
     },
-    computed: {
-    proxySelected: {
-      get() {
-        return this.list.includes(this.selected) ? this.selected : null;
-      },
-      set(newValue) {
-        if (newValue) {
-          this.selected = newValue;
-        }
-      }
-    }
-}
+
 }
 </script>
 <style scoped>
@@ -111,6 +83,10 @@ form {
     padding: 5px;
     border-radius: 10px;
     width: 100%;
+}
+
+.text-gray a {
+    color: teal;
 }
 
 form .add-story {
@@ -146,6 +122,7 @@ h1 {
     font-size: 2em;
     width: 100%;
 }
+
 .not,
 textarea,
 input {
@@ -156,6 +133,7 @@ input {
 input[type=text] {
     border: none;
 }
+
 select,
 ::placeholder {
     color: rgb(65, 54, 6);
@@ -163,9 +141,9 @@ select,
 }
 
 .submit-button {
-    width: 200px;
+    width: 150px;
     padding: 10px;
-    background-color: tomato;
+    background-color: teal;
     border: none;
     border-radius: 20px;
     color: #fff;
@@ -206,22 +184,24 @@ label {
     width: 14.5em;
     border: 0.1em solid #c0cdd1;
 }
+
 .dropdown select {
-	display:inline-block;
-	/* color: #8c8c8c; */
-	/* float:left; */
-	/* font-size:15px; */
-	padding: 10px;
-	z-index:9999;
-	cursor:pointer;
-	background: transparent;
-	border: none;
-	width:100%;
-	max-width:none !important;
-	/* -webkit-appearance: none; */
+    display: inline-block;
+    /* color: #8c8c8c; */
+    /* float:left; */
+    /* font-size:15px; */
+    padding: 10px;
+    z-index: 9999;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    width: 100%;
+    max-width: none !important;
+    /* -webkit-appearance: none; */
     outline: none;
 }
-.dropdown select option{
+
+.dropdown select option {
     background-color: #EFEFEF;
     font-weight: 600;
     padding: 10px;

@@ -89,8 +89,8 @@ export default defineComponent({
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
         {
-          label: 'Data One',
-          backgroundColor: '#f87979',
+          label: 'Users',
+          backgroundColor: '#41B883',
           data: [40, 39, 10, 40, 39, 80, 40]
         }
       ]
